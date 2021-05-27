@@ -28,7 +28,7 @@
 					<div class="mb-3 row">
 						<label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="inputUser">
+							<input type="text" class="form-control" id="inputUser"  value="<?php echo $firstName; ?>">
 						</div>
 
 
@@ -37,21 +37,21 @@
 					<div class="mb-3 row">
 						<label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="inputUser">
+							<input type="text" class="form-control" id="inputUser"  value="<?php echo $lastName; ?>">
 						</div>
 					</div>
 
 					<div class="mb-3 row">
 						<label for="inputUser" class="col-sm-2 col-form-label">User</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="inputUser">
+							<input type="text" class="form-control" id="inputUser"  value="<?php echo $username; ?>">
 						</div>
 					</div>
 					
 					<div class="mb-3 row">
 						<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
 						<div class="col-sm-4">
-							<input type="password" class="form-control" id="inputPassword">
+							<input type="password" class="form-control" id="inputPassword" name = "Password">
 						</div>
 
 						<div class="row-auto">
