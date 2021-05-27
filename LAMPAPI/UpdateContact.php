@@ -3,7 +3,7 @@
 
 	$inData = getRequestInfo();
 
-	$id = 0;
+	$id = $inData["id"];
 	$firstName = $inData["firstName"];
 	$lastName = $inData["lastName"];
   $phone = $inData["phone"];
@@ -19,7 +19,7 @@
 	else
 	{
 		$stmt = $conn->prepare("SELECT * FROM Contacts WHERE ID=?");
-		$stmt->bind_param("s", $inData["id"]);
+		$stmt->bind_param("s", $id);
 		$stmt->execute();
 		$result = $stmt->get_result();
 
@@ -27,9 +27,9 @@
 		if( $row = $result->fetch_assoc()  )
 		{
       $curID = $row['ID'];
-      $update = "UPDATE Contacts SET FirstName = '$firstName', LastName = '$lastName', Phone = '$phone', Email = '$email', UserID = '$userId' WHERE ID = '$curID'";
+      $update = "UPDATE Contacts SET FirstName='$firstName', LastName='$lastName', Phone='$phone', Email='$email', UserID='$userId' WHERE ID = '$curID'";
       mysqli_query($conn, $update);
-			returnWithInfo( $row['FirstName'], $row['LastName'], $row['Phone'], $row['Email'], $row['userID'] );
+			returnWithInfo( $row['FirstName'], $row['LastName'], $row['Phone'], $row['Email'], $row['UserID'] );
 		}
 		else
 		{
