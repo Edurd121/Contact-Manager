@@ -24,7 +24,7 @@
 				<div class="card-header">
 					<h5 class="card-title">Register</h5>
 				</div>
-				<form class="col g-3">
+				<form class="col g-3" method = "post">
 					<div class="mb-3 row">
 						<label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
 						<div class="col-sm-4">
