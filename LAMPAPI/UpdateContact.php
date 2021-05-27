@@ -3,7 +3,7 @@
 
 	$inData = getRequestInfo();
 
-	$id = 0;
+	$id = $inData["id"];
 	$firstName = $inData["firstName"];
 	$lastName = $inData["lastName"];
   $phone = $inData["phone"];
@@ -18,7 +18,7 @@
 	else
 	{
 		$stmt = $conn->prepare("SELECT * FROM Contacts WHERE ID=?");
-		$stmt->bind_param("s", $inData["id"]);
+		$stmt->bind_param("s", $id);
 		$stmt->execute();
 		$result = $stmt->get_result();
 
