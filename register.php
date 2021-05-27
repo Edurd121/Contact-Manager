@@ -1,4 +1,4 @@
-<?php include('registerUser.php') ?>
+<?php include('LAMPAPI/registerUser.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
