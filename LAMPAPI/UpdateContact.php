@@ -8,6 +8,7 @@
 	$lastName = $inData["lastName"];
   $phone = $inData["phone"];
   $email = $inData["email"];
+  $userId = $inData["userId"];
 
 
 	$conn = new mysqli("localhost", "admin", "password", "COP4331");
@@ -28,7 +29,7 @@
       $curID = $row['ID'];
       $update = "UPDATE Contacts SET FirstName = '$firstName', LastName = '$lastName', Phone = '$phone', Email = '$email' WHERE ID = '$curID'";
       mysqli_query($conn, $update);
-			returnWithInfo( $row['FirstName'], $row['LastName'], $row['Phone'], $row['Email'], $row['ID'] );
+			returnWithInfo( $row['FirstName'], $row['LastName'], $row['Phone'], $row['Email'], $row['userID'] );
 		}
 		else
 		{
@@ -60,7 +61,7 @@
 
 	function returnWithInfo( $firstName, $lastName, $phone, $email, $id )
 	{
-		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","phone":"' . $phone . '","email":"' . $email .'","error":""}';
+		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","phone":"' . $phone . '","email":"' . $email .'","userID":"' .$userId .'","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
