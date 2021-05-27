@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,11 +24,11 @@
 				<div class="card-header">
 					<h5 class="card-title">Register</h5>
 				</div>
-				<form class="col g-3">
+				<form class="col g-3" method = "post">
 					<div class="mb-3 row">
 						<label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="inputUser">
+							<input type="text" class="form-control" id="inputUser" name = "FirstName">
 						</div>
 
 
@@ -35,25 +37,25 @@
 					<div class="mb-3 row">
 						<label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="inputUser">
+							<input type="text" class="form-control" id="inputUser"   name = "LastName">
 						</div>
 					</div>
 
 					<div class="mb-3 row">
 						<label for="inputUser" class="col-sm-2 col-form-label">User</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="inputUser">
+							<input type="text" class="form-control" id="inputUser"  name = "Login" >
 						</div>
 					</div>
 					
 					<div class="mb-3 row">
 						<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
 						<div class="col-sm-4">
-							<input type="password" class="form-control" id="inputPassword">
+							<input type="password" class="form-control" id="inputPassword" name = "Password">
 						</div>
 
 						<div class="row-auto">
-							<button type="submit" class="btn btn-primary mb-3">Sign Up</button>
+							<button type="submit" class="btn btn-primary mb-3" name = "sign_user" >Sign Up</button>
 						</div>
 
 						<p>Got an account? <a href="login.html">Log in here</a>
