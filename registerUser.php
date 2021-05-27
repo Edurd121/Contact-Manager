@@ -50,7 +50,7 @@ if($user) {
 if(count($errors) == 0 ){
     
     //password encrypt
-    $Password = md5($Password_1);
+    $Password = md5($Password);
 
     $query = "INSERT TO Users (FirstName, LastName, Login, Password) VALUES ('$firstName','$lastName', '$username', '$Password')";
 
