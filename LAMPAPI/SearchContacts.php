@@ -26,6 +26,7 @@
 			}
 			$searchCount++;
 			$searchResults .= '"' . $row["FirstName"] . '"';
+      $searchResults .= '"' . $row["LastName"] . '"';
 		}
 
 		if( $searchCount == 0 )
