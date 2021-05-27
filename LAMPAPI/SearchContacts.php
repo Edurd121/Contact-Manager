@@ -12,9 +12,9 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("SELECT * from Contacts WHERE * like ? AND UserID=?");
-		$searchData = "%" . $inData["search"] . "%";
-		$stmt->bind_param("ss", $searchData, $inData["userId"]);
+		$stmt = $conn->prepare("SELECT * FROM Contacts WHERE * LIKE ? AND UserID=?");
+		$colorName = "%" . $inData["search"] . "%";
+		$stmt->bind_param("ss", $colorName, $inData["userId"]);
 		$stmt->execute();
 
 		$result = $stmt->get_result();
@@ -26,7 +26,7 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '{"First Name":' . $row["FirstName"] . ', "Last Name":"' . $row["LastName"] . '","Phone: ' . $row["Phone"] . '","Email":"' . $row["Email"] . '","error":""}';
+			$searchResults .= '"' . $row["FirstName"] . '"';
 		}
 
 		if( $searchCount == 0 )
