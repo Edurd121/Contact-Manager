@@ -54,13 +54,13 @@ if(count($errors) == 0 ){
 
     $query = "INSERT TO Users (FirstName, LastName, Login, Password) VALUES ('$firstName','$lastName', '$username', '$Password')";
 
-    mysqli_query($db, $query);
+    mysqli_query($conn, $query);
 
     $_SESSION['username'] = $username;
     $_SESSION['success'] = "you are now logged in";
     
     #when finished looks for the next page to go
-    header('location: index.php');
+    header('location: login.html');
 
     }
 
