@@ -36,7 +36,7 @@ if(isset($_POST['sign_user'])) {
 
 $contacts_check = "SELECT * FROM Users WHERE Login = '$username' LIMIT 1" ;
 
-$result = mysqli_query($db, $contacts_check);
+$result = mysqli_query($conn, $contacts_check);
 $user = mysqli_fetch_assoc($result);
 
 //if the user exists 
