@@ -25,7 +25,7 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '"Name":"' . $row["FirstName"] . '"';
+			$searchResults .= '"test test test test"';
 		}
 
 		if( $searchCount == 0 )
