@@ -28,7 +28,6 @@
       $curID = $row['ID'];
       $update = "UPDATE Contacts SET FirstName='$firstName', LastName='$lastName', Phone='$phone', Email='$email' WHERE ID = '$curID'";
       mysqli_query($conn, $update);
-			returnWithInfo( $row['FirstName'], $row['LastName'], $row['Phone'], $row['Email'] );
 		}
 		else
 		{
@@ -58,10 +57,5 @@
 		sendResultInfoAsJson( $retValue );
 	}
 
-	function returnWithInfo( $firstName, $lastName, $phone, $email, $id )
-	{
-		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","phone":"' . $phone . '","email":"' . $email .'","error":""}';
-		sendResultInfoAsJson( $retValue );
-	}
 
 ?>
