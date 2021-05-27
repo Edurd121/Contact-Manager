@@ -27,7 +27,7 @@
 		if( $row = $result->fetch_assoc()  )
 		{
       $curID = $row['ID'];
-      $update = "UPDATE Contacts SET FirstName = '$firstName', LastName = '$lastName', Phone = '$phone', Email = '$email' WHERE ID = '$curID'";
+      $update = "UPDATE Contacts SET FirstName = '$firstName', LastName = '$lastName', Phone = '$phone', Email = '$email', UserID = '$userId' WHERE ID = '$curID'";
       mysqli_query($conn, $update);
 			returnWithInfo( $row['FirstName'], $row['LastName'], $row['Phone'], $row['Email'], $row['userID'] );
 		}
