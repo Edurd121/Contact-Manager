@@ -28,7 +28,7 @@
 					<div class="mb-3 row">
 						<label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="inputUser" name = "FirstName">
+							<input type="text" class="form-control" id="inputFirst" name = "FirstName">
 						</div>
 
 
@@ -37,7 +37,7 @@
 					<div class="mb-3 row">
 						<label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="inputUser"   name = "LastName">
+							<input type="text" class="form-control" id="inputLast"   name = "LastName">
 						</div>
 					</div>
 
@@ -70,8 +70,9 @@
 
 	<script type="text/javascript">
 		function test() {
-					var username = document.getElementById("username").value
-					var passwrd = document.getElementById("passwrd").value
+					console.log("We are in test!");
+					var username = document.getElementById("inputUser").value
+					var passwrd = document.getElementById("inputPassword").value
 					var creds = "uname="+username+"&passwd="+passwrd;
 					var ajx = new XMLHttpRequest();
 					ajx.onreadystatechange = function () {
@@ -82,5 +83,6 @@
 					ajx.open("POST", "./LAMPAPI/Signup.php", true);
 					ajx.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 					ajx.send(creds);
+					console.log("We got through the function, without killing our website");
 				}
 	</script>
