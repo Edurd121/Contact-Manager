@@ -55,7 +55,7 @@
 						</div>
 
 						<div class="row-auto">
-							<button type="submit" class="btn btn-primary mb-3" name = "sign_user" >Sign Up</button>
+							<button type="submit" class="btn btn-primary mb-3" name = "sign_user" onclick="test();">Sign Up</button>
 						</div>
 
 						<p>Got an account? <a href="login.html">Log in here</a>
@@ -67,3 +67,20 @@
 	</body>
 
 </html>
+
+	<script type="text/javascript">
+		function test() {
+					var username = document.getElementById("username").value
+					var passwrd = document.getElementById("passwrd").value
+					var creds = "uname="+username+"&passwd="+passwrd;
+					var ajx = new XMLHttpRequest();
+					ajx.onreadystatechange = function () {
+						if (ajx.readyState == 4 && ajx.status == 200) {
+							alert(ajx.responseText);
+						}
+					};
+					ajx.open("POST", "./LAMPAPI/Signup.php", true);
+					ajx.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					ajx.send(creds);
+				}
+	</script>
