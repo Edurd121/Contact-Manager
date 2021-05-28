@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 #Variables
 $inData = getRequestInfo();
@@ -17,7 +17,7 @@ if($conn -> connect_error){
 }
 #if passed no error has occured
 else{
-    
+
     #Variables with Data
     $firstName = $inData["firstName"];
     $lastName = $inData["lastName"];
@@ -28,7 +28,7 @@ else{
     $stmt = $conn->prepare("INSERT INTO Users (FirstName, LastName, Login, Password) VALUES (?,?,?,?)");
     $stmt->bind_param("ssss", $firstName, $lastName, $Login, $Password);
     $stmt->execute();
-    
+
     $stmt->close();
     $conn->close();
 
@@ -47,14 +47,14 @@ function sendResultInfoAsJson( $obj )
 		header('Content-type: application/json');
 		echo $obj;
 	}
-	
-#Requests Info 
+
+#Requests Info
 function getRequestInfo()
 {
     return json_decode(file_get_contents('php://input'), true);
 }
-fun
-ction returnWithInfo( $firstName, $lastName)
+
+function returnWithInfo( $firstName, $lastName)
 {
   $retValue = '{"first_name":"' . $first_name . '","last_name":"' . $last_name . '","error":""}';
   sendResultInfoAsJson( $retValue );
