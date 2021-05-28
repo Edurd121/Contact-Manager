@@ -74,9 +74,11 @@
 			var first = document.getElementById("inputFirst").value
 			var last = document.getElementById("inputLast").value
 			var username = document.getElementById("inputUser").value
-			var passwrd = document.getElementById("inputPassword").value
+			var password = document.getElementById("inputPassword").value
 			// var creds = "uname="+username+"&passwd="+passwrd;
-			var creds = "firstName=" + first + "&lastName=" + last + "&Login="+username+"&Password="+passwrd;
+			// var creds = "firstName=" + first + "&lastName=" + last + "&Login="+username+"&Password="+passwrd;
+			var creds = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "Login" : "' + username + '", "Password" : "' + password + '"}';
+
 			var ajx = new XMLHttpRequest();
 			ajx.onreadystatechange = function () {
 				if (ajx.readyState == 4 && ajx.status == 200) {
@@ -87,7 +89,9 @@
 			// ajx.open("POST", "./LAMPAPI/Signup.php", true);
 			
 			ajx.open("POST", "./LAMPAPI/registerUser.php", true);
-			ajx.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			// ajx.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			ajx.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
 			ajx.send(creds);
 			console.log("We got through the function, without killing our website");
 		}

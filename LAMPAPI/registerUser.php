@@ -21,12 +21,12 @@ else{
     #Variables with Data
     $firstName = $inData["firstName"];
     $lastName = $inData["lastName"];
-    $Login = $inData["Login"];
-    $Password = $inData["Password"];
+    $login = $inData["login"];
+    $password = $inData["password"];
 
 
-    $stmt = $conn->prepare("INSERT INTO Users (FirstName, LastName, Login, Password) VALUES (?,?,?,?)");
-    $stmt->bind_param("ssss", $firstName, $lastName, $Login, $Password);
+    $stmt = $conn->prepare("INSERT INTO Users (FirstName,LastName,Login, Password) VALUES (?,?,?,?)");
+    $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
     $stmt->execute();
 
     $stmt->close();
