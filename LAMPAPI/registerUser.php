@@ -4,8 +4,8 @@
 $inData = getRequestInfo();
 
 $serverName = "localhost";
-$connUser = "root";
-$connPass = "74d40daad74e0908bb448dae28536cfa732ac308b2a28a36";
+$connUser = "admin";
+$connPass = "password";
 $connDataName = "COP4331";
 
 
