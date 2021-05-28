@@ -21,14 +21,12 @@
 		$result = $stmt->get_result();
 
 
-
-
 		if( $row = $result->fetch_assoc()  )
 		{
       $curID = $row['ID'];
       $update = "UPDATE Users SET DateLastLoggedIn=CURRENT_TIMESTAMP where ID = '$curID'";
       mysqli_query($conn, $update);
-			returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
+			returnWithInfo( $row['FirstName'], $row['LastName'], $row['ID'] );
 		}
 		else
 		{
@@ -39,8 +37,6 @@
 		$stmt->close();
 		$conn->close();
 	}
-
-
 
 
 	function getRequestInfo()
