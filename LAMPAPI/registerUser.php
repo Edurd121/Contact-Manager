@@ -56,7 +56,7 @@ function getRequestInfo()
 
 function returnWithInfo( $firstName, $lastName)
 {
-  $retValue = '{"first_name":"' . $first_name . '","last_name":"' . $last_name . '","error":""}';
+  $retValue = '{"first_name":"' . $firstName . '","last_name":"' . $lastName . '","error":""}';
   sendResultInfoAsJson( $retValue );
 }
 
