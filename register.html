@@ -119,7 +119,7 @@
 							document.getElementById("userAddResult").innerHTML = "Color has been added";
 						}
 					};
-					xhr.send(jsonPayload);
+					xhr.send(creds);
 				}
 				catch (err) {
 					document.getElementById("userAddResult").innerHTML = err.message;
