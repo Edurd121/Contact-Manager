@@ -34,7 +34,6 @@ else{
 	
     returnWithInfo($firstName, $lastName, $login );
 
-    returnWithError("Error");
 }
 
 #Returns the an Error
