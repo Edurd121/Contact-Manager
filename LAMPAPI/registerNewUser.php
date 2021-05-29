@@ -20,10 +20,10 @@ else{
      #Variables with Data
      $firstName = ""
      $lastName = ""
-     $Login = ""
+     $login = ""
      $Password = "" 
 
-    $sql = "SELECT Login FROM Users where Login = '" . $inData["userName"] . "'";
+    $sql = "SELECT login FROM Users where login = '" . $inData["login"] . "'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0)
     {
@@ -35,14 +35,14 @@ else{
     #in data gets the id from the html
     $firstName = $inData["firstName"];
     $lastName = $inData["lastName"];
-    $Login = $inData["Login"];
+    $login = $inData["login"];
     $Password = $inData["Password"];
     
-    $sql = "INSERT INTO Users (FirstName, LastName, Login, Password) VALUES ('" . $inData["firstName"] . "','" . $inData["lastName"] . "','" . $inData["userName"] . "','" . $inData["password"] . "')";
+    $sql = "INSERT INTO Users (FirstName, LastName, Login, Password) VALUES ('" . $inData["firstName"] . "','" . $inData["lastName"] . "','" . $inData["login"] . "','" . $inData["Password"] . "')";
     $result = $conn->query($sql);
     if ($result == TRUE)
     {
-        returnWithInfo($firstName, $lastName, $Login );
+        returnWithInfo($firstName, $lastName, $login);
     }
     else
     {
@@ -71,9 +71,9 @@ $retValue = '{"firstName":"","lastName":"","error":"' . $err . '"}';
 sendResultInfoAsJson( $retValue );
 }
 
-function returnWithInfo( $firstName, $lastName, $Login )
+function returnWithInfo( $firstName, $lastName, $login )
 {
-$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","userName":"' . $Login . '","error":""}';
+$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","userName":"' . $login . '","error":""}';
 sendResultInfoAsJson( $retValue );
 }
 ?>
