@@ -23,7 +23,7 @@ else{
      $Login = ""
      $Password = "" 
 
-    $sql = "SELECT Login FROM Users where Login = '" . $inData["userName"] . "'";
+    $sql = "SELECT Login FROM Users where Login = '" . $inData["Login"] . "'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0)
     {
@@ -38,7 +38,7 @@ else{
     $Login = $inData["Login"];
     $Password = $inData["Password"];
     
-    $sql = "INSERT INTO Users (FirstName, LastName, Login, Password) VALUES ('" . $inData["firstName"] . "','" . $inData["lastName"] . "','" . $inData["userName"] . "','" . $inData["password"] . "')";
+    $sql = "INSERT INTO Users (FirstName, LastName, Login, Password) VALUES ('" . $inData["firstName"] . "','" . $inData["lastName"] . "','" . $inData["Login"] . "','" . $inData["Password"] . "')";
     $result = $conn->query($sql);
     if ($result == TRUE)
     {
@@ -73,7 +73,7 @@ sendResultInfoAsJson( $retValue );
 
 function returnWithInfo( $firstName, $lastName, $Login )
 {
-$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","userName":"' . $Login . '","error":""}';
+$retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","Login":"' . $Login . '","error":""}';
 sendResultInfoAsJson( $retValue );
 }
 ?>
