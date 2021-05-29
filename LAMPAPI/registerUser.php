@@ -31,8 +31,9 @@ else{
 
     $stmt->close();
     $conn->close();
+	
+    returnWithInfo($firstName, $lastName, $login );
 
-    returnWithError("Error");
 }
 
 #Returns the an Error
@@ -54,9 +55,9 @@ function getRequestInfo()
     return json_decode(file_get_contents('php://input'), true);
 }
 
-function returnWithInfo( $firstName, $lastName)
+function returnWithInfo( $firstName, $lastName , $login)
 {
-  $retValue = '{"first_name":"' . $firstName . '","last_name":"' . $lastName . '","error":""}';
+  $retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","User":"' . $login . '","error":""}';
   sendResultInfoAsJson( $retValue );
 }
 
