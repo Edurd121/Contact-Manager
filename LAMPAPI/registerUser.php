@@ -56,7 +56,7 @@ function getRequestInfo()
     return json_decode(file_get_contents('php://input'), true);
 }
 
-function returnWithInfo( $firstName, $lastName)
+function returnWithInfo( $firstName, $lastName , $login)
 {
   $retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName .'"User":"' . $login . '","error":""}';
   sendResultInfoAsJson( $retValue );
