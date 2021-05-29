@@ -31,6 +31,8 @@ else{
 
     $stmt->close();
     $conn->close();
+	
+    returnWithInfo($firstName, $lastName, $login );
 
     returnWithError("Error");
 }
@@ -56,7 +58,7 @@ function getRequestInfo()
 
 function returnWithInfo( $firstName, $lastName)
 {
-  $retValue = '{"first_name":"' . $firstName . '","last_name":"' . $lastName . '","error":""}';
+  $retValue = '{"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
   sendResultInfoAsJson( $retValue );
 }
 
