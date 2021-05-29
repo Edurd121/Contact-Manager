@@ -98,17 +98,17 @@
 			console.log("We got through the function, without killing our website");
 		}
 		function addUser() {
-			var urlBase = 'http://COP4331-29.xyz/contact-manager';
+			var urlBase = 'http://COP4331-29.xyz/Contact-Manager';
 			var extension = 'php';
 
 			var first = document.getElementById("inputFirst").value
 			var last = document.getElementById("inputLast").value
 			var username = document.getElementById("inputUser").value
 			var password = document.getElementById("inputPassword").value
-			document.getElementById("colorAddResult").innerHTML = "";
+			document.getElementById("userAddResult").innerHTML = "";
 
 			var creds = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "Login" : "' + username + '", "Password" : "' + password + '"}';
-				var url = urlBase + '/registerUser.' + extension;
+				var url = urlBase + '/LAMPAPI/registerUser.' + extension;
 
 				var xhr = new XMLHttpRequest();
 				xhr.open("POST", url, true);
