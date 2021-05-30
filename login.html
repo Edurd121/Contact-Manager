@@ -44,7 +44,7 @@
 						<button id="loginButton" type="submit" class="btn btn-primary mb-3" onclick="doLogin();">Login</button>
 					</div>
 				</div>
-	<span id="loginResult"></span>
+				<span id="loginResult"></span>
 			</form>
 			<div class="row-auto">
 				<p>Don't have a login? <a href="register.html">Sign up</a>
@@ -57,3 +57,65 @@
 </body>
 
 </html>
+
+<script>
+	var userId = 0;
+	var firstName = "";
+	var lastName = "";
+
+	function doLogin() {
+			var urlBase = 'http://cop4331-29.xyz/Contact-Manager';
+			var extension = 'php';
+
+			userId = 0;
+			firstName = "";
+			lastName = "";
+
+			var login = document.getElementById("loginName").value;
+			var password = document.getElementById("loginPassword").value;
+			//	var hash = md5( password );
+
+			document.getElementById("loginResult").innerHTML = "";
+
+			//	var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
+			var jsonPayload = '{"login" : "' + login + '", "password" : "' + password + '"}';
+			var url = urlBase + '/LAMPAPI/Login.' + extension;
+
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", url, true);
+			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			try {
+				xhr.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						var jsonObject = JSON.parse(xhr.responseText);
+						userId = jsonObject.id;
+
+						if (userId < 1) {
+							document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+							return;
+						}
+
+						firstName = jsonObject.firstName;
+						lastName = jsonObject.lastName;
+
+						saveCookie();
+
+						window.location.href = "login.html";
+
+					}
+				};
+				xhr.send(jsonPayload);
+			}
+			catch (err) {
+				document.getElementById("loginResult").innerHTML = err.message;
+			}
+
+		}
+
+		function saveCookie() {
+			var minutes = 20;
+			var date = new Date();
+			date.setTime(date.getTime() + (minutes * 60 * 1000));
+			document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+		}
+</script>
