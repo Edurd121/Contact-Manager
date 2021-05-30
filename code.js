@@ -82,7 +82,11 @@ function addUser() {
                         }
                     };
                     xhr.send(creds);
+			
+		//go to the home page location 
+			// window.location.href = "homepage.html";
                 }
+	
                 catch (err) {
                     document.getElementById("userAddResult").innerHTML = err.message;
                 }
