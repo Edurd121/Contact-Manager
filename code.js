@@ -57,6 +57,38 @@ function doLogin()
 
 }
 
+function addUser() {
+            var urlBase = 'http://cop4331-29.xyz/Contact-Manager';
+            var extension = 'php';
+
+            var first = document.getElementById("inputFirst").value
+            var last = document.getElementById("inputLast").value
+            var username = document.getElementById("inputUser").value
+            var password = document.getElementById("inputPassword").value
+            document.getElementById("userAddResult").innerHTML = "";
+
+            var creds = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "login" : "' + username + '", "password" : "' + password + '"}';
+            var url = urlBase + '/LAMPAPI/registerUser.' + extension;
+
+            console.log(creds);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", url, true);
+                xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+                try {
+                    xhr.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById("userAddResult").innerHTML = "User has been added";
+                        }
+                    };
+                    xhr.send(creds);
+                }
+                catch (err) {
+                    document.getElementById("userAddResult").innerHTML = err.message;
+                }
+
+            }
+
 function saveCookie()
 {
 	var minutes = 20;
