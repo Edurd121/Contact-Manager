@@ -6,7 +6,7 @@ var urlBase = 'http://cop4331-29.xyz/Contact-Manager';
 var extension = 'php';
 
 function doLogin() {
-
+	console.log("inside doLogin");
 	userId = 0;
 	firstName = "";
 	lastName = "";
@@ -48,6 +48,7 @@ function doLogin() {
 		xhr.send(jsonPayload);
 	}
 	catch (err) {
+		alert("error")
 		document.getElementById("loginResult").innerHTML = err.message;
 	}
 
@@ -61,6 +62,7 @@ function saveCookie() {
 }
 
 function readCookie() {
+	console.log("inside read cookie");
 	userId = -1;
 	var data = document.cookie;
 	var splits = data.split(",");
