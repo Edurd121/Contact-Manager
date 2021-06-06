@@ -39,6 +39,7 @@ function doLogin() {
 				lastName = jsonObject.lastName;
 
 				saveCookie();
+				console.log(firstName + lastName)
 
 				window.location.href = "contacts.html";
 
