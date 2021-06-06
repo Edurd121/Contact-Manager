@@ -142,6 +142,29 @@ function addUser() {
 
 }
 
-function test() {
-	alert("working");
+function addContact() {
+	var first = document.getElementById("contactFirst").value
+	var last = document.getElementById("contactLast").value
+	var email = document.getElementById("contactEmail").value
+	var phone = document.getElementById("contactPhone").value
+	document.getElementById("contactAddResult").innerHTML = "";
+
+	var creds = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "email" : "' + email + '", "phone" : "' + phone + '"}';
+	var url = urlBase + '/LAMPAPI/AddContact.' + extension;
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try {
+		xhr.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+			}
+		};
+		xhr.send(creds);
+	}
+	catch (err) {
+		document.getElementById("contactAddResult").innerHTML = err.message;
+	}
+
 }
