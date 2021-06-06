@@ -85,6 +85,15 @@ function readCookie() {
 	}
 }
 
+function doLogout() {
+	userId = 0;
+	firstName = "";
+	lastName = "";
+	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+	window.location.href = "login.html";
+}
+
+
 function test() {
 	console.log("We are in test!");
 	var first = document.getElementById("inputFirst").value
