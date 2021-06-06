@@ -14,7 +14,10 @@
 		crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-		crossorigin="anonymous"></script>
+		crossorigin="anonymous">
+	</script>
+		<script type="text/javascript" src="js/code.js"></script>
+
 </head>
 
 	<body>
@@ -55,12 +58,14 @@
 						</div>
 
 						<div class="row-auto">
-							<button type="submit" class="btn btn-primary mb-3" name = "sign_user">Sign Up</button>
+							<button type="submit" class="btn btn-primary mb-3" name = "sign_user" onclick="addUser();">Sign Up</button>
 						</div>
 
 						<p>Got an account? <a href="login.html">Log in here</a>
 					</div>
 				</form>
+					<span id="userAddResult"></span>
+
 			</div>
 		<div>
 
@@ -68,7 +73,7 @@
 
 </html>
 
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		function test() {
 			console.log("We are in test!");
 			var first = document.getElementById("inputFirst").value
@@ -95,4 +100,35 @@
 			ajx.send(creds);
 			console.log("We got through the function, without killing our website");
 		}
-	</script>
+		function addUser() {
+			var urlBase = 'http://cop4331-29.xyz/Contact-Manager';
+			var extension = 'php';
+
+			var first = document.getElementById("inputFirst").value
+			var last = document.getElementById("inputLast").value
+			var username = document.getElementById("inputUser").value
+			var password = document.getElementById("inputPassword").value
+			document.getElementById("userAddResult").innerHTML = "";
+
+			var creds = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "login" : "' + username + '", "password" : "' + password + '"}';
+			var url = urlBase + '/LAMPAPI/registerUser.' + extension;
+
+			console.log(creds);
+
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", url, true);
+				xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+				try {
+					xhr.onreadystatechange = function () {
+						if (this.readyState == 4 && this.status == 200) {
+							document.getElementById("userAddResult").innerHTML = "User has been added";
+						}
+					};
+					xhr.send(creds);
+				}
+				catch (err) {
+					document.getElementById("userAddResult").innerHTML = err.message;
+				}
+
+			}
+	</script> -->
