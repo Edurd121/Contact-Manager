@@ -113,7 +113,7 @@ function test() {
 }
 
 function addUser() {
-
+	console.log("In add user")
 	var first = document.getElementById("inputFirst").value
 	var last = document.getElementById("inputLast").value
 	var username = document.getElementById("inputUser").value
@@ -143,6 +143,7 @@ function addUser() {
 }
 
 function addContact() {
+	alert("in addContact")
 	var first = document.getElementById("contactFirst").value
 	var last = document.getElementById("contactLast").value
 	var email = document.getElementById("contactEmail").value
