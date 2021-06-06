@@ -16,7 +16,13 @@
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 		crossorigin="anonymous">
 	</script>
-	<script type="text/javascript" src="js/code.js"></script>
+	<script type="text/javascript" src="js/code.js">
+		document.addEventListener('DOMContentLoaded', function () 
+		{
+			alert("In event listener")
+			readCookie();
+		}, false);
+	</script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -39,7 +45,7 @@
 						aria-disabled="true">Disabled
 					</a>
 
-					<button class="btn btn-dark" type="button" onclick="doLogout()">Test </button>
+					<button class="btn btn-dark" type="button" onclick="doLogout()">LogOut </button>
 				</div>
 			</div>
 		</div>
