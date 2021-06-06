@@ -146,11 +146,11 @@ function addContact() {
 	alert("in addContact")
 	var first = document.getElementById("contactFirst").value
 	var last = document.getElementById("contactLast").value
-	var email = document.getElementById("contactEmail").value
 	var phone = document.getElementById("contactPhone").value
+	var email = document.getElementById("contactEmail").value
 	document.getElementById("contactAddResult").innerHTML = "";
 
-	var creds = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "email" : "' + email + '", "phone" : "' + phone + '"}';
+	var creds = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "phone" : "' + phone + '", "email" : "' + email + '", "userId" : ' + userId + '}';
 	var url = urlBase + '/LAMPAPI/AddContact.' + extension;
 
 	var xhr = new XMLHttpRequest();
