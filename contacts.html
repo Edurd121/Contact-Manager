@@ -21,7 +21,7 @@
 	document.addEventListener('DOMContentLoaded', function () 
 		{
 			console.log("In event listener");
-			readCookie();
+			// readCookie();
 		}, false);
 	</script>
 
@@ -40,8 +40,6 @@
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
 					<a class="nav-link active" aria-current="page" href="#">Home</a>
-					<a class="nav-link" href="#">Features</a>
-					<a class="nav-link" href="#">Pricing</a>
 					<a class="nav-link disabled" href="#" tabindex="-1"
 						aria-disabled="true">Disabled
 					</a>
@@ -49,8 +47,18 @@
 					<button class="btn btn-dark" type="button" onclick="doLogout()">Logout </button>
 				</div>
 			</div>
+
 		</div>
 	</nav>
+	<nav class="navbar navbar-light bg-light">
+		<form class="form-inline">
+			<input class="form-control mr-sm-2" id="searchText" type="search" placeholder="Search Contact" aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="searchContact()">Search</button>
+		</form>
+	</nav>
+	<span id="contactsSearchResult"></span>
+	<p id="contactList">
+	</p><br /><br />
 
 	<!-- Button trigger modal -->
 	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
