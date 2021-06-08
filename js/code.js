@@ -202,12 +202,13 @@ function searchContact() {
 				document.getElementById("contactsSearchResult").innerHTML = "Contact(s) has been retrieved";
 				var jsonObject = JSON.parse(xhr.responseText);
 
-				for (var i = 0; i < jsonObject.results.length; i++) {
-					contactList += jsonObject.results[i];
-					if (i < jsonObject.results.length - 1) {
-						contactList += "<br />\r\n";
-					}
-				}
+				// Uncomment to see a print out of the parsed JSON object
+				// for (var i = 0; i < jsonObject.results.length; i++) {
+				// 	contactList += jsonObject.results[i];
+				// 	if (i < jsonObject.results.length - 1) {
+				// 		contactList += "<br />\r\n";
+				// 	}
+				// }
 				// console.log(JSON.parse(jsonObject));
 				console.log(jsonObject);
 				displayContacts(jsonObject)
