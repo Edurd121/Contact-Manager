@@ -206,16 +206,25 @@ function searchContact() {
 						contactList += "<br />\r\n";
 					}
 				}
-
+				console.log(json.parse(jsonObject));
+				console.log(jsonObject)
 				document.getElementsByTagName("p")[0].innerHTML = contactList;
-				console.log(jsonObject);
 			}
 		};
 		xhr.send(jsonPayload);
+
 	}
 	catch (err) {
 		document.getElementById("contactsSearchResult").innerHTML = err.message;
 	}
 
+}
+
+function displayContacts(contacts) {
+	contacts.results.map((contact) => {
+		let temp = contacts.split(", ");
+		
+		
+	})
 }
 
