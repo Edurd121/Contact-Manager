@@ -55,6 +55,7 @@ function doLogin() {
 }
 
 function saveCookie() {
+	console.log("inside save cookie")
 	var minutes = 20;
 	var date = new Date();
 	date.setTime(date.getTime() + (minutes * 60 * 1000));
