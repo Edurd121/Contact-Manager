@@ -207,7 +207,8 @@ function searchContact() {
 					}
 				}
 				// console.log(JSON.parse(jsonObject));
-				console.log(jsonObject)
+				console.log(jsonObject);
+				contactList = displayContacts(jsonObject);
 				document.getElementsByTagName("p")[0].innerHTML = contactList;
 			}
 		};
@@ -222,8 +223,14 @@ function searchContact() {
 
 function displayContacts(contacts) {
 	contacts.results.map((contact) => {
-		let temp = contacts.split(", ");
-		
+		let temp = contact.split(", ");
+		'<div class="card text-dark bg-light mb-6" style="max-width: 18rem;">'+
+			'<div class="card-header">'+temp[0]+'</div>'+
+			'<div class="card-body">'+
+				'<p class="card-title">'+temp[1]+'</p>'+
+				'<p class="card-text">'+temp[2]+'</p>'+
+			'</div>'+
+		'</div>'
 		
 	})
 }
