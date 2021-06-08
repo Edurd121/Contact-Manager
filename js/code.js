@@ -183,6 +183,7 @@ function addContact() {
 }
 
 function searchContact() {
+	console.log("Inside searchContact()")
 	var srch = document.getElementById("searchText").value;
 	document.getElementById("contactsSearchResult").innerHTML = "";
 
@@ -223,6 +224,7 @@ function searchContact() {
 }
 
 function displayContacts(contacts) {
+	console.log("inside displayContacts")
 	document.getElementById("contactsList").innerHTML =	contacts.results.map((contact) => {
 		let temp = contact.split(", ");
 		console.log(temp)
