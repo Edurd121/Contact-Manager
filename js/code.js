@@ -208,6 +208,7 @@ function searchContact() {
 				}
 
 				document.getElementsByTagName("p")[0].innerHTML = contactList;
+				console.log(jsonObject);
 			}
 		};
 		xhr.send(jsonPayload);
