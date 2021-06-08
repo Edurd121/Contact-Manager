@@ -1,0 +1,11 @@
+body{
+    background-color: gray !important;
+    color: White !important;
+    text-align: center;
+    overflow: auto;
+}
+
+h1{
+    color: White;
+    font-size: 300%;
+}
