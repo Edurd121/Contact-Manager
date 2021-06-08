@@ -16,14 +16,6 @@
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 		crossorigin="anonymous">
 	</script>
-	
-	<script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function () 
-		{
-			console.log("In event listener");
-			readCookie();
-		}, false);
-	</script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -143,5 +135,11 @@
 
 	<!-- So we can access ids after they have been rendered in the DOM -->
 	<script type="text/javascript" src="js/code.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			console.log("In event listener");
+			readCookie();
+		}, false);
+	</script>
 </body>
 </html>
