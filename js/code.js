@@ -225,6 +225,7 @@ function searchContact() {
 function displayContacts(contacts) {
 	document.getElementById("contactsList").innerHTML =	contacts.results.map((contact) => {
 		let temp = contact.split(", ");
+		console.log(temp)
 		`<div class="card text-dark bg-light mb-6" style="max-width: 18rem;">
 			<div class="card-header">${temp[0]}</div>
 				<div class="card-body">
