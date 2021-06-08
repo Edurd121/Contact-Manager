@@ -25,7 +25,7 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '"ID: ' . $row["ID"] . ', Name: ' . $row["FirstName"] . ' ' . $row["LastName"] . ', Phone: ' . $row["Phone"] . ', Email: ' . $row["Email"] . '"';
+			$searchResults .= '" ID: ' . $row["ID"] . ', Name: ' . $row["FirstName"] . ' ' . $row["LastName"] . ', Phone: ' . $row["Phone"] . ', Email: ' . $row["Email"] . '"';
 		}
 
 		if( $searchCount == 0 )
