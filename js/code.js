@@ -213,7 +213,7 @@ function searchContact() {
 				// console.log(JSON.parse(jsonObject));
 				console.log(jsonObject);
 				displayContacts(jsonObject)
-				document.getElementsByTagName("p")[0].innerHTML = contactList;
+				// document.getElementsByTagName("p")[0].innerHTML = contactList;
 
 			}
 		};
