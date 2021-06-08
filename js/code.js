@@ -223,7 +223,7 @@ function searchContact() {
 
 }
 
-function displayContacts(contacts) {
+window.onload = function displayContacts(contacts) {
 	console.log("inside displayContacts")
 	document.getElementById("contactsList").innerHTML =	contacts.results.map((contact) => {
 		let temp = contact.split(", ");
