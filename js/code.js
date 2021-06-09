@@ -232,7 +232,7 @@ function displayContacts(contacts) {
 		let temp = contact.split(", ");
 		console.log(temp)
 		return(
-		`<div class="card text-dark bg-light mb-6" style="max-width: 18rem;">
+		`<div class="card text-dark bg-light mb-6" style="max-width: 32rem;">
 			<div class="card-header">${temp[0]}</div>
 				<div class="card-body">
 					<p class="card-title">${temp[1]}</p>
