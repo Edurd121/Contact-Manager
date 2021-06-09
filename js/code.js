@@ -157,7 +157,6 @@ function addUser() {
 }
 
 function addContact() {
-	alert("in addContact")
 	var first = document.getElementById("contactFirst").value
 	var last = document.getElementById("contactLast").value
 	var phone = document.getElementById("contactPhone").value
@@ -230,14 +229,19 @@ function displayContacts(contacts) {
 	console.log("inside displayContacts")
 	document.getElementById("contactsList").innerHTML =	contacts.results.map((contact) => {
 		let temp = contact.split(", ");
+		let id = temp[0].split(": ")[1];
+		let name = temp[1].split(": ")[1];
+		let phone = temp[2].split(": ")[1];
+		let email = temp[3].split(": ")[1];
+
 		console.log(temp)
 		return(
 		`<div class="card text-dark bg-light mb-6" style="max-width: 32rem;">
-			<button type="button" class="btn btn-danger id="${temp[0]}" onclick="deleteContact(${temp[0].split(": ")[1]})">Delete</button>
-			<div class="card-header">${temp[1]}</div>
+			<button type="button" class="btn btn-danger id="${id}" onclick="deleteContact(${id})">Delete</button>
+			<div class="card-header">${name}</div>
 				<div class="card-body">
-					<p class="card-title">${temp[2]}</p>
-					<p class="card-text">${temp[3]}</p>
+					<p class="card-title">${phone}</p>
+					<p class="card-text">${email}</p>
 				</div>
 			</div>
 		</div>`)
