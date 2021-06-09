@@ -239,15 +239,15 @@ function displayContacts(contacts) {
 		console.log(temp)
 		return(
 		`<div class="card text-dark bg-light mb-6" style="max-width: 32rem;">
-			<div class="card-header" id="${id+"name"}">${name}</div>
+			<div class="card-header" id="${id}name">${name}</div>
 				<div class="card-body">
-					<p class="card-title" id="${id + "phone"}>${phone}</p>
-					<p class="card-text" id="${id + "email"}>${email}</p>
+					<p class="card-title" id="${id}phone">${phone}</p>
+					<p class="card-text" id="${id}email">${email}</p>
 					<button type="button" class="btn btn-danger" id="${id}" onclick="deleteContact(${id})">Delete</button>
-					<button type="button" class="btn btn-danger" id="${id+"Update"}" onclick="addUpdateToggle(${true, id})">Update</button>
+					<button type="button" class="btn btn-danger" id="${id}Update" onclick="addUpdateToggle(${true, id})">Update</button>
 				</div>
 			</div>
-		</div>`)
+		</div>)`
 	})
 }
 
