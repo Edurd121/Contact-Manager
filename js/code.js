@@ -244,7 +244,7 @@ function displayContacts(contacts) {
 					<p class="card-title" id="${id}phone">${phone}</p>
 					<p class="card-text" id="${id}email">${email}</p>
 					<button type="button" class="btn btn-danger" id="${id}" onclick="deleteContact(${id})">Delete</button>
-					<button type="button" class="btn btn-warning" id="${id}Update" onclick="addUpdateToggle(${true, id})">Update</button>
+					<button type="button" class="btn btn-warning" id="${id}Update" onclick="addUpdateToggle(${true}, ${id})">Update</button>
 				</div>
 			</div>
 		</div>`)
@@ -332,7 +332,7 @@ function addUpdateToggle(mode, toEdit) {
 	if (mode)
 	{
 		// Prepopulates the modal with the data we currently have
-		let name = document.getElementById("7name").innerHTML
+		let name = document.getElementById(toEdit+"name").innerHTML
 		let first = ""
 		let last = ""
 		if (name.includes(" "))
