@@ -212,12 +212,12 @@ function searchContact() {
 				// }
 				// console.log(JSON.parse(jsonObject));
 				console.log(jsonObject);
-				displayContacts(jsonObject)
 				// document.getElementsByTagName("p")[0].innerHTML = contactList;
-
+				
 			}
 		};
 		xhr.send(jsonPayload);
+		displayContacts(jsonObject)
 
 	}
 	catch (err) {
@@ -233,10 +233,11 @@ function displayContacts(contacts) {
 		console.log(temp)
 		return(
 		`<div class="card text-dark bg-light mb-6" style="max-width: 32rem;">
-			<div class="card-header">${temp[0]}</div>
+			<button type="button" class="btn btn-danger id="${temp[0]}" onclick={deleteContact()}>Delete</button>
+			<div class="card-header">${temp[1]}</div>
 				<div class="card-body">
-					<p class="card-title">${temp[1]}</p>
-					<p class="card-text">${temp[2]}</p>
+					<p class="card-title">${temp[2]}</p>
+					<p class="card-text">${temp[3]}</p>
 				</div>
 			</div>
 		</div>`)
@@ -246,4 +247,50 @@ function displayContacts(contacts) {
 window.onload = () => {
 	searchContact();
 }
+
+function deleteContact(id) {
+	console.log("Inside deleteContact()")
+
+	if (confirm("Do you really want to delete this contact?"))
+		return;
+
+	// var srch = document.getElementById("searchText").value;
+	// document.getElementById("contactsSearchResult").innerHTML = "";
+	document.getElementById(id)
+
+	var jsonPayload = '{"id" : "' + id + '}';
+	var url = urlBase + '/LAMPAPI/DeleteContact.' + extension;
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try {
+		xhr.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				// document.getElementById("contactsSearchResult").innerHTML = "Contact(s) has been retrieved";
+				var jsonObject = JSON.parse(xhr.responseText);
+
+				// Uncomment to see a print out of the parsed JSON object
+				// for (var i = 0; i < jsonObject.results.length; i++) {
+				// 	contactList += jsonObject.results[i];
+				// 	if (i < jsonObject.results.length - 1) {
+				// 		contactList += "<br />\r\n";
+				// 	}
+				// }
+				// console.log(JSON.parse(jsonObject));
+				console.log(jsonObject);
+				searchContact(jsonObject)
+				// document.getElementsByTagName("p")[0].innerHTML = contactList;
+
+			}
+		};
+		xhr.send(jsonPayload);
+
+	}
+	catch (err) {
+		document.getElementById("contactsSearchResult").innerHTML = err.message;
+	}
+}
+
+
 
