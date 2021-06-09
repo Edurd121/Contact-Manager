@@ -247,7 +247,7 @@ function displayContacts(contacts) {
 					<button type="button" class="btn btn-danger" id="${id}Update" onclick="addUpdateToggle(${true, id})">Update</button>
 				</div>
 			</div>
-		</div>)`
+		</div>`)
 	})
 }
 
