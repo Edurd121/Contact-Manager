@@ -280,7 +280,7 @@ function deleteContact(id) {
 				// var jsonObject = JSON.parse(xhr.responseText);
 				// console.log("PRINTING JSONOBJECT")
 				// console.log(jsonObject);
-				var jsonObject = JSON.parse(xhr.responseText);
+				// var jsonObject = JSON.parse(xhr.responseText);
 				
 				searchContact();
 			}
