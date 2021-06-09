@@ -251,9 +251,10 @@ window.onload = () => {
 function deleteContact(id) {
 	console.log("Inside deleteContact()")
 
-	if (confirm("Do you really want to delete this contact?"))
+	if (!confirm("Do you really want to delete this contact?"))
 		return;
 
+	console.log("Got through the confirm")
 	// var srch = document.getElementById("searchText").value;
 	// document.getElementById("contactsSearchResult").innerHTML = "";
 	document.getElementById(id)
