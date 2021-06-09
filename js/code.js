@@ -332,7 +332,7 @@ function addUpdateToggle(mode, toEdit) {
 	if (mode)
 	{
 		// Prepopulates the modal with the data we currently have
-		let name = document.getElementById(toEdit + "name").innerHTML
+		let name = document.getElementById("7name").innerHTML
 		let first = ""
 		let last = ""
 		if (name.includes(" "))
