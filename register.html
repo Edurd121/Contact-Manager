@@ -22,57 +22,51 @@
 </head>
 
 	<body>
-		<div class="card border-dark mb-3" style="width: 50rem;">
-			<img src="..." class="card-img-top" alt="placeholder for future images">
-			<div class="card-body">
-				<div class="card-header">
-					<h5 class="card-title">Register</h5>
+		<img src="cypherCat.jfif" class="card-img-top"  height="200" alt="placeholder for future images">
+		<div class="card-body">
+			<div class="card-header">
+				<h5 class="card-title">Register</h5>
+			</div>
+			<form action="registerUser.php" class="col g-3" method = "POST">
+			<div class="mb-3 row">
+				<label for="inputFirstName" class="col-sm-4 col-form-label">First Name</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="inputFirst" name = "FirstName">
 				</div>
-				<form action="registerUser.php" class="col g-3" method = "POST">
-					<div class="mb-3 row">
-						<label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
-						<div class="col-sm-4">
-							<input type="text" class="form-control" id="inputFirst" name = "FirstName">
-						</div>
-
-
-					</div>
+			</div>
 	
-	
+			<div class="mb-3 row">
+				<label for="inputLastName" class="col-sm-4 col-form-label">Last Name</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="inputLast"   name = "LastName">
 				</div>
+			</div>
 	
-				<div class="mb-3 row">
-					<label for="inputLastName" class="col-sm-4 col-form-label">Last Name</label>
-					<div class="col-sm-4">
-						<input type="text" class="form-control" id="inputLast"   name = "LastName">
-					</div>
+			<div class="mb-3 row">
+				<label for="inputUser" class="col-sm-4 col-form-label">User</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="inputUser"  name = "Login" >
 				</div>
-	
-				<div class="mb-3 row">
-					<label for="inputUser" class="col-sm-4 col-form-label">User</label>
-					<div class="col-sm-4">
-						<input type="text" class="form-control" id="inputUser"  name = "Login" >
-					</div>
-				</div>
+			</div>
 					
-				<div class="mb-3 row">
-					<label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
-					<div class="col-sm-4">
-						<input type="password" class="form-control" id="inputPassword" name = "Password">
-					</div>
-	
-					<div class="row-auto">
-						<button type="submit" class="btn btn-warning" name = "sign_user" onclick="addUser();">Sign Up</button>
-					</div>
-	
-					<p>Got an account? <a href="login.html">Log in here</a>
+			<div class="mb-3 row">
+				<label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
+				<div class="col-sm-4">
+					<input type="password" class="form-control" id="inputPassword" name = "Password">
 				</div>
+	
+				<div class="row-auto">
+					<button type="submit" class="btn btn-warning" name = "sign_user" onclick="addUser();">Sign Up</button>
+				</div>
+	
+				<p>Got an account? <a href="login.html">Log in here</a>
+			</div>
 			</form>
-				<span id="userAddResult"></span>
+			<span id="userAddResult"></span>
 		</div>
 	
-	</div>
-</body>
+	</body>
+
 
 	
 
