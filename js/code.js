@@ -244,7 +244,7 @@ function displayContacts(contacts) {
 					<p class="card-title" id="${id}phone">${phone}</p>
 					<p class="card-text" id="${id}email">${email}</p>
 					<button type="button" class="btn btn-danger" id="${id}" onclick="deleteContact(${id})">Delete</button>
-					<button type="button" class="btn btn-warning" id="${id}Update" onclick="addUpdateToggle(${true}, ${id})">Update</button>
+					<button type="button" class="btn btn-warning" id="${id}Update" onclick="addUpdateToggle(${true}, ${id})" data-bs-toggle="modal" data-bs-target="#createModal">Update</button>
 				</div>
 			</div>
 		</div>`)
@@ -352,16 +352,18 @@ function addUpdateToggle(mode, toEdit) {
 		document.getElementById("contactEmail").innerHTML = document.getElementById(toEdit + "phone").innerHTML;
 		document.getElementById("contactPhone").innerHTML = document.getElementById(toEdit + "email").innerHTML;
 		document.getElementById("modalButton").onclick = () => {updateContact(toEdit);}
+		console.log("Switched to update mode")
 	}
 	// If we want to add
 	else
 	{
 		// Prepopulates modal with empty data
-		document.getElementById("contactFirst").innerHTML = ""
+		document.getElementById("contactFirst").inernerHTML = ""
 		document.getElementById("contactLast").innerHTML = ""
 		document.getElementById("contactEmail").innerHTML = ""
 		document.getElementById("contactPhone").innerHTML = ""
 		document.getElementById("modalButton").onclick = addContact;
+		console.log("Switched to add mode")
 	}
 }
 
