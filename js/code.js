@@ -85,7 +85,7 @@ function readCookie() {
 		window.location.href = "login.html";
 	}
 	else {
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+		document.getElementById("welcomeName").innerHTML = "Welcome to the Cornucopia, " + firstName + " " + lastName;
 	}
 }
 
