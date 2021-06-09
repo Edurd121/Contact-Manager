@@ -243,3 +243,7 @@ function displayContacts(contacts) {
 	})
 }
 
+window.onload = () => {
+	searchContact();
+}
+
