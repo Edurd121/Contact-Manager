@@ -269,9 +269,11 @@ function deleteContact(id) {
 	try {
 		xhr.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
-				var jsonObject = JSON.parse(xhr.responseText);
-				console.log("PRINTING JSONOBJECT")
-				console.log(jsonObject);
+				document.getElementById("contactsSearchResult").innerHTML = "Contact(s) has been deleted";
+				// var jsonObject = JSON.parse(xhr.responseText);
+				// console.log("PRINTING JSONOBJECT")
+				// console.log(jsonObject);
+				searchContact();
 			}
 		};
 		xhr.send(jsonPayload);
