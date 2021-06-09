@@ -233,7 +233,7 @@ function displayContacts(contacts) {
 		console.log(temp)
 		return(
 		`<div class="card text-dark bg-light mb-6" style="max-width: 32rem;">
-			<button type="button" class="btn btn-danger id="${temp[0]}" onclick={() => deleteContact(${temp[0]})}>Delete</button>
+			<button type="button" class="btn btn-danger id="${temp[0]}" onclick="() => {deleteContact(${temp[0]})}()">Delete</button>
 			<div class="card-header">${temp[1]}</div>
 				<div class="card-body">
 					<p class="card-title">${temp[2]}</p>
