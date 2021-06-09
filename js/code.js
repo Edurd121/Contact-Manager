@@ -259,7 +259,7 @@ function deleteContact(id) {
 	// document.getElementById("contactsSearchResult").innerHTML = "";
 	// document.getElementById(id)
 
-	var jsonPayload = '{"id" : "' + id + '}';
+	var jsonPayload = '{"id" : "' + id + '"}';
 	var url = urlBase + '/LAMPAPI/DeleteContact.' + extension;
 	console.log("PRINTING JSONPAYLOAD")
 	console.log(jsonPayload)
