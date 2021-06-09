@@ -173,6 +173,7 @@ function addContact() {
 		xhr.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
 				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+				searchContact();
 			}
 		};
 		xhr.send(creds);
@@ -225,6 +226,7 @@ function searchContact() {
 
 }
 
+// Helper function for the search which renders each contact as a card
 function displayContacts(contacts) {
 	console.log("inside displayContacts")
 	document.getElementById("contactsList").innerHTML =	contacts.results.map((contact) => {
@@ -238,10 +240,11 @@ function displayContacts(contacts) {
 		return(
 		`<div class="card text-dark bg-light mb-6" style="max-width: 32rem;">
 			<button type="button" class="btn btn-danger id="${id}" onclick="deleteContact(${id})">Delete</button>
-			<div class="card-header">${name}</div>
+			<button type="button" class="btn btn-danger id="${id+"Update"}" onclick="addUpdateToggle(${true, id})">Delete</button>
+			<div class="card-header" id="${id+"name"}">${name}</div>
 				<div class="card-body">
-					<p class="card-title">${phone}</p>
-					<p class="card-text">${email}</p>
+					<p class="card-title" id="${id + "phone"}>${phone}</p>
+					<p class="card-text" id="${id + "email"}>${email}</p>
 				</div>
 			</div>
 		</div>`)
@@ -277,6 +280,8 @@ function deleteContact(id) {
 				// var jsonObject = JSON.parse(xhr.responseText);
 				// console.log("PRINTING JSONOBJECT")
 				// console.log(jsonObject);
+				var jsonObject = JSON.parse(xhr.responseText);
+				
 				searchContact();
 			}
 		};
@@ -285,6 +290,76 @@ function deleteContact(id) {
 	}
 	catch (err) {
 		document.getElementById("contactsSearchResult").innerHTML = err.message;
+	}
+}
+
+function updateContact(id) {
+	console.log("Inside updateContact()")
+
+	let first = document.getElementById("contactFirst").value
+	let last = document.getElementById("contactLast").value
+	let phone = document.getElementById("contactPhone").value
+	let email = document.getElementById("contactEmail").value
+	document.getElementById("contactAddResult").innerHTML = "";
+
+	var jsonPayload = '{"id" : "' + id + '", "firstName" : "' + first + '", "lastName" : "' + last + '", "phone" : "' + phone + '", "email" : "' + email + '"}';
+	var url = urlBase + '/LAMPAPI/UpdateContact.' + extension;
+
+	// Switch the modal back to add mode
+	addUpdateToggle(false)
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try {
+		xhr.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				document.getElementById("contactAddResult").innerHTML = "Contact has been updated";
+				searchContact();
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch (err) {
+		document.getElementById("contactAddResult").innerHTML = err.message;
+	}
+
+}
+
+function addUpdateToggle(mode, toEdit) {
+	// If we want to update
+	if (mode)
+	{
+		// Prepopulates the modal with the data we currently have
+		let name = document.getElementById(toEdit + "name").innerHTML
+		let first = ""
+		let last = ""
+		if (name.includes(" "))
+		{
+			let temp = name.split(" ");
+			first = temp[0];
+			last = temp[1];
+		}
+		else
+		{
+			first = name;
+			last = "";
+		}
+
+		document.getElementById("contactFirst").innerHTML = first
+		document.getElementById("contactLast").innerHTML = last
+		document.getElementById("contactEmail").innerHTML = document.getElementById(toEdit + "phone").innerHTML;
+		document.getElementById("contactPhone").innerHTML = document.getElementById(toEdit + "email").innerHTML;
+		document.getElementById("modalButton").onclick = () => {updateContact(toEdit);}
+	}
+	// If we want to add
+	else
+	{
+		// Prepopulates modal with empty data
+		document.getElementById("contactFirst").innerHTML = ""
+		document.getElementById("contactLast").innerHTML = ""
+		document.getElementById("contactEmail").innerHTML = ""
+		document.getElementById("contactPhone").innerHTML = ""
+		document.getElementById("modalButton").onclick = addContact;
 	}
 }
 

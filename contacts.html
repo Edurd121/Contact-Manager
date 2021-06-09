@@ -55,12 +55,12 @@
 	</p><br /><br />
 
 	<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal" onclick="addCreateToggle(false, -1)">
 		Add Contact
 	</button>
 	
 	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+	<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel"
 		aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -107,13 +107,14 @@
 					<button type="button" class="btn btn-secondary"	data-bs-dismiss="modal">
 						Close
 					</button>
-					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addContact()">
+					<button id="modalButton"type="button" class="btn btn-primary" data-dismiss="modal" onclick="addContact()">
 						Submit
 					</button>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<div class="container-fluid">
 		<div class="row">
