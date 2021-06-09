@@ -212,8 +212,11 @@ function searchContact() {
 				// }
 				// console.log(JSON.parse(jsonObject));
 				console.log(jsonObject);
+				if (jsonObject.error !== "")
+					document.getElementById("contactsList").innerHTML = "No contacts here!"
+				else
+					displayContacts(jsonObject)
 				// document.getElementsByTagName("p")[0].innerHTML = contactList;
-				displayContacts(jsonObject)
 				
 			}
 		};
