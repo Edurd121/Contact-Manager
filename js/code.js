@@ -257,32 +257,21 @@ function deleteContact(id) {
 	console.log("Got through the confirm")
 	// var srch = document.getElementById("searchText").value;
 	// document.getElementById("contactsSearchResult").innerHTML = "";
-	document.getElementById(id)
+	// document.getElementById(id)
 
 	var jsonPayload = '{"id" : "' + id + '}';
 	var url = urlBase + '/LAMPAPI/DeleteContact.' + extension;
-
+	console.log("PRINTING JSONPAYLOAD")
+	console.log(jsonPayload)
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try {
 		xhr.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
-				// document.getElementById("contactsSearchResult").innerHTML = "Contact(s) has been retrieved";
 				var jsonObject = JSON.parse(xhr.responseText);
-
-				// Uncomment to see a print out of the parsed JSON object
-				// for (var i = 0; i < jsonObject.results.length; i++) {
-				// 	contactList += jsonObject.results[i];
-				// 	if (i < jsonObject.results.length - 1) {
-				// 		contactList += "<br />\r\n";
-				// 	}
-				// }
-				// console.log(JSON.parse(jsonObject));
+				console.log("PRINTING JSONOBJECT")
 				console.log(jsonObject);
-				searchContact(jsonObject)
-				// document.getElementsByTagName("p")[0].innerHTML = contactList;
-
 			}
 		};
 		xhr.send(jsonPayload);
