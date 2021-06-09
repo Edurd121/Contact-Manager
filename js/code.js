@@ -213,11 +213,11 @@ function searchContact() {
 				// console.log(JSON.parse(jsonObject));
 				console.log(jsonObject);
 				// document.getElementsByTagName("p")[0].innerHTML = contactList;
+				displayContacts(jsonObject)
 				
 			}
 		};
 		xhr.send(jsonPayload);
-		displayContacts(jsonObject)
 
 	}
 	catch (err) {
