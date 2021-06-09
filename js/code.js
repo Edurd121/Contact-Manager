@@ -326,6 +326,8 @@ function updateContact(id) {
 }
 
 function addUpdateToggle(mode, toEdit) {
+	console.log(mode)
+	console.log(toEdit)
 	// If we want to update
 	if (mode)
 	{
