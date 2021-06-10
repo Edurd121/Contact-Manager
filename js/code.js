@@ -339,11 +339,15 @@ function prepopulate(toEdit) {
 	first = temp[0];
 	last = temp[1];
 	
+	let email = document.getElementById("email" + toEdit).innerHTML;
+	let phone = document.getElementById("phone" + toEdit).innerHTML;
+
+	console.log(toEdit + ", " + name + ", " + email + ", " + phone)
 
 	document.getElementById("updateFirst" + toEdit).innerHTML = first
 	document.getElementById("updateLast" + toEdit).innerHTML = last
-	document.getElementById("updateEmail" + toEdit).innerHTML = document.getElementById("email" + toEdit).innerHTML;
-	document.getElementById("updatePhone" + toEdit).innerHTML = document.getElementById("phone" + toEdit).innerHTML;
+	document.getElementById("updateEmail" + toEdit).innerHTML = email
+	document.getElementById("updatePhone" + toEdit).innerHTML = phone
 }
 
 function displayContacts(contacts) {
