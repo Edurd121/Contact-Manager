@@ -214,9 +214,17 @@ function searchContact() {
 				// console.log(JSON.parse(jsonObject));
 				console.log(jsonObject);
 				if (jsonObject.error !== "")
+				{
 					document.getElementById("contactsList").innerHTML = "No contacts here!"
+				}	
 				else
+				{
 					displayContacts(jsonObject)
+					jsonObject.map((contact) => {
+						let id = temp[0].split(": ")[1];
+						prepopulate(id);
+					})
+				}
 				// document.getElementsByTagName("p")[0].innerHTML = contactList;
 				
 			}
@@ -287,6 +295,7 @@ function deleteContact(id) {
 				// var jsonObject = JSON.parse(xhr.responseText);
 				
 				searchContact();
+
 			}
 		};
 		xhr.send(jsonPayload);
@@ -300,10 +309,10 @@ function deleteContact(id) {
 function updateContact(id) {
 	console.log("Inside updateContact()")
 
-	let first = document.getElementById(id+"updateFirst").value
-	let last = document.getElementById(id+"updateLast").value
-	let phone = document.getElementById(id+"updatePhone").value
-	let email = document.getElementById(id+"updateEmail").value
+	let first = document.getElementById("updateFirst" + id).value
+	let last = document.getElementById("updateLast" + id).value
+	let phone = document.getElementById("updatePhone" + id).value
+	let email = document.getElementById("updateEmail" + id).value
 	document.getElementById("contactAddResult").innerHTML = "";
 
 	var jsonPayload = '{"id" : "' + id + '", "firstName" : "' + first + '", "lastName" : "' + last + '", "phone" : "' + phone + '", "email" : "' + email + '"}';
@@ -335,12 +344,12 @@ function prepopulate(toEdit) {
 	let first = ""
 	let last = ""
 	
-	let temp = name.split("");
+	let temp = name.split(" ");
 	first = temp[0];
 	last = temp[1];
 	
-	let email = document.getElementById("email" + toEdit).innerHTML;
-	let phone = document.getElementById("phone" + toEdit).innerHTML;
+	let email = document.getElementById("email" + toEdit).innerHTML.split(": ")[1];
+	let phone = document.getElementById("phone" + toEdit).innerHTML.split(": ")[1];
 
 	console.log(toEdit + ", " + name + ", " + email + ", " + phone)
 	
@@ -377,7 +386,7 @@ function displayContacts(contacts) {
 					<p>
 						<button class="btn btn-warning" type="button" data-bs-toggle="collapse"
 							data-bs-target="#updateMenu${id}" aria-expanded="false"
-							aria-controls="updateMenu${id}" onclick="prepopulate(${id})">Update</button>
+							aria-controls="updateMenu${id}")">Update</button>
 						<button class="btn btn-danger" type="button">Delete</button>
 					</p>
 				</div>
