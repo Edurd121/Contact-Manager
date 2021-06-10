@@ -162,7 +162,7 @@ function addContact() {
 	var last = document.getElementById("contactLast").value
 	var phone = document.getElementById("contactPhone").value
 	var email = document.getElementById("contactEmail").value
-	// document.getElementById("contactAddResult").innerHTML = "";
+	// document.getElementById("contactAddResult").innerHTML = ""; 
 
 	var creds = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "phone" : "' + phone + '", "email" : "' + email + '", "userId" : ' + userId + '}';
 	var url = urlBase + '/LAMPAPI/AddContact.' + extension;
