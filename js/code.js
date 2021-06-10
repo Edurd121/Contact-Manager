@@ -343,11 +343,19 @@ function prepopulate(toEdit) {
 	let phone = document.getElementById("phone" + toEdit).innerHTML;
 
 	console.log(toEdit + ", " + name + ", " + email + ", " + phone)
-
+	
 	document.getElementById("updateFirst" + toEdit).innerHTML = first
 	document.getElementById("updateLast" + toEdit).innerHTML = last
 	document.getElementById("updateEmail" + toEdit).innerHTML = email
 	document.getElementById("updatePhone" + toEdit).innerHTML = phone
+	
+	let uf = document.getElementById("updateFirst" + toEdit).innerHTML
+	let ul = document.getElementById("updateLast" + toEdit).innerHTML
+	let ue = document.getElementById("updateEmail" + toEdit).innerHTML
+	let up = document.getElementById("updatePhone" + toEdit).innerHTML
+	console.log(toEdit + ", " + uf + ", " + ul + ", " + ue + ", " + up)
+
+
 }
 
 function displayContacts(contacts) {
