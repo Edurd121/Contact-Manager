@@ -134,7 +134,7 @@ function addUser() {
 	document.getElementById("userAddResult").innerHTML = "";
 	var hash = md5( password );
 	
-	var creds = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "login" : "' + username + '", "password" : "' + password + '"}';
+	var creds = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "login" : "' + username + '", "password" : "' + hash + '"}';
 	var url = urlBase + '/LAMPAPI/registerUser.' + extension;
 
 	console.log(creds);
@@ -255,9 +255,9 @@ function displayContacts(contacts) {
 	})
 }
 
-window.onload = () => {
-	searchContact();
-}
+// window.onload = () => {
+// 	searchContact();
+// }
 
 function deleteContact(id) {
 	console.log("Inside deleteContact()")
