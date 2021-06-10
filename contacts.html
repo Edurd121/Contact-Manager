@@ -21,7 +21,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
 			<p class="h1" id="mainTitle">Contact Cornucopia</p>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -31,12 +31,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-link active" aria-current="page" href="#">Home</a>
-					<a class="nav-link disabled" href="#" tabindex="-1"
-						aria-disabled="true">Disabled
-					</a>
-
-					<button class="btn btn-dark" id="logoutButton" type="button" onclick="doLogout()">Logout </button>
+					<button class="btn btn-outline-info" id="logoutButton" type="button" onclick="doLogout()">Logout </button>
 				</div>
 			</div>
 
@@ -125,18 +120,18 @@
 				<form class="d-flex">
 					<input class="form-control me-2" id="searchText" type="search" placeholder="Search Contact"
 						aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="button"
+					<button class="btn btn-outline-info my-2 my-sm-0" type="button"
 						onclick="searchContact()">Search</button>
 				</form>
 			</div>
-			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
+			<button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#createModal">
 				<span><i class="fas fa-user-plus"></i> New Contact</span>
 			</button>
 			<h5 class="card-title"></h5>
 				<div id="contactsList"></div>
-			<a href="#" class="btn btn-primary">Go somewhere</a>
+			<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
 		</div>
-		<div class="card-footer text-muted">
+		<div class="card-footer text-muted" id="endOfList">
 			End of list
 		</div>
 	</div>

@@ -12,6 +12,7 @@
 }
 
 body{
+	height: 100vh;
   background: linear-gradient(36deg, rgba(59,78,91,1) 11%, rgba(23,140,124,1) 23%, rgba(90,118,137,1) 47%, rgba(135,104,146,1) 98%);
 }
 
@@ -24,4 +25,8 @@ body{
 
 #mainTitle {
   color: white;
+}
+
+#endOfList {
+	color: black;
 }
