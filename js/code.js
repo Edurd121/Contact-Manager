@@ -389,7 +389,7 @@ function displayContacts(contacts) {
 						<button class="btn btn-outline-warning" type="button" data-bs-toggle="collapse"
 							data-bs-target="#updateMenu${id}" aria-expanded="false"
 							aria-controls="updateMenu${id}") onclick="prepopulate(${id})"><span><i class="far fa-edit"></i></span></button>
-						<button class="btn btn-outline-danger" type="button"><span><i class="fas fa-trash-alt"></i></span></button>
+						<button class="btn btn-outline-danger" type="button"><span><i class="fas fa-trash-alt" onclick="deleteContact(${id})"></i></span></button>
 					</p>
 				</div>
 				<div class="col">
