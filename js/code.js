@@ -381,70 +381,70 @@ function displayContacts(contacts) {
 		let email = temp[3].split(": ")[1];
 		return (
 			`
-				<div class="card row">
-					<div class="card">
-						<a class="btn btn-light" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
-							aria-expanded="false" aria-controls="multiCollapseExample1" id="${id}name">${name}</a>
-					</div>
-					<div>
-						<p>
-							<button class="btn btn-warning" type="button" data-bs-toggle="collapse"
-								data-bs-target="#multiCollapseExample2" aria-expanded="false"
-								aria-controls="multiCollapseExample2">Update</button>
-							<button class="btn btn-danger" type="button">Delete</button>
-						</p>
+			<div class="card row">
+				<div class="card">
+					<a class="btn btn-light" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
+						aria-expanded="false" aria-controls="multiCollapseExample1" id="${id}name">${name}</a>
+				</div>
+				<div>
+					<p>
+						<button class="btn btn-warning" type="button" data-bs-toggle="collapse"
+							data-bs-target="#multiCollapseExample2" aria-expanded="false"
+							aria-controls="multiCollapseExample2">Update</button>
+						<button class="btn btn-danger" type="button">Delete</button>
+					</p>
+				</div>
+				<div class="col">
+					<div class="col">
+						<div class="collapse multi-collapse" id="multiCollapseExample1">
+							<div class="card card-body">
+								Phone: ${phone}
+								Email: ${email}
+							</div>
+						</div>
 					</div>
 					<div class="col">
-						<div class="col">
-							<div class="collapse multi-collapse" id="multiCollapseExample1">
-								<div class="card card-body">
-									Phone: ${phone}
-									Email: ${email}
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="collapse multi-collapse" id="multiCollapseExample2">
-								<div class="card card-body">
-									<div class="card text-dark bg-light mb-6" style="max-width: 100%;">
-										<form class="col g-3" method="post" autocomplete="off">
-											<div class="mb-3 row">
-												<label for="${id}updateFirst" class="col-sm-2 col-form-label">First Name:</label>
-												<div class="col-sm-4">
-													<input type="text" class="form-control" id="${id}updateFirst" name="FirstName">
-												</div>
-
+						<div class="collapse multi-collapse" id="multiCollapseExample2">
+							<div class="card card-body">
+								<div class="card text-dark bg-light mb-6" style="max-width: 100%;">
+									<form class="col g-3" method="post" autocomplete="off">
+										<div class="mb-3 row">
+											<label for="${id}updateFirst" class="col-sm-2 col-form-label">First Name:</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="${id}updateFirst" name="FirstName">
 											</div>
 
-											<div class="mb-3 row">
-												<label for="${id}updateLast" class="col-sm-2 col-form-label">Last Name:</label>
-												<div class="col-sm-4">
-													<input type="text" class="form-control" id="${id}updateLast" name="LastName">
-												</div>
-											</div>
+										</div>
 
-											<div class="mb-3 row">
-												<label for="${id}updateEmail" class="col-sm-2 col-form-label">Email:</label>
-												<div class="col-sm-4">
-													<input type="email" class="form-control" id="${id}updateEmail" name="Email">
-												</div>
+										<div class="mb-3 row">
+											<label for="${id}updateLast" class="col-sm-2 col-form-label">Last Name:</label>
+											<div class="col-sm-4">
+												<input type="text" class="form-control" id="${id}updateLast" name="LastName">
 											</div>
+										</div>
 
-											<div class="mb-3 row">
-												<label for="${id}updatePhone" class="col-sm-2 col-form-label">Phone:</label>
-												<div class="col-sm-4">
-													<input type="tel" class="form-control" id="${id}updatePhone" name="Phone">
-												</div>
+										<div class="mb-3 row">
+											<label for="${id}updateEmail" class="col-sm-2 col-form-label">Email:</label>
+											<div class="col-sm-4">
+												<input type="email" class="form-control" id="${id}updateEmail" name="Email">
 											</div>
-											<button class="btn btn-outline-primary">Submit</button>
-										</form>
-									</div>
+										</div>
+
+										<div class="mb-3 row">
+											<label for="${id}updatePhone" class="col-sm-2 col-form-label">Phone:</label>
+											<div class="col-sm-4">
+												<input type="tel" class="form-control" id="${id}updatePhone" name="Phone">
+											</div>
+										</div>
+										<button class="btn btn-outline-primary">Submit</button>
+									</form>
 								</div>
 							</div>
 						</div>
 					</div>
-					<span id="contactAddResult"></span>
-				</div>`
+				</div>
+				<span id="contactAddResult"></span>
+			</div>`
 		)
 	})
 }
