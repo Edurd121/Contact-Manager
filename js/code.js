@@ -220,7 +220,8 @@ function searchContact() {
 				else
 				{
 					displayContacts(jsonObject)
-					jsonObject.map((contact) => {
+					jsonObject.results.map((contact) => {
+						let temp = contact.split(", ");
 						let id = temp[0].split(": ")[1];
 						prepopulate(id);
 					})
