@@ -23,7 +23,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
-			<p class="h1">Contact Cornucopia</p>
+			<p class="h1" id="mainTitle">Contact Cornucopia</p>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
 						aria-disabled="true">Disabled
 					</a>
 
-					<button class="btn btn-dark" type="button" onclick="doLogout()">Logout </button>
+					<button class="btn btn-dark" id="logoutButton" type="button" onclick="doLogout()">Logout </button>
 				</div>
 			</div>
 
@@ -115,7 +115,7 @@
 	</div>
 	
 	<!-- Display contacts here -->
-	<div class="card text-center" style="max-width: 35rem">
+	<div class="card bg-secondary border-info text-center text-white" id="listContainer" style="max-width: 35rem">
 		<div class="card-header h4">
 			Contacts List
 		</div>

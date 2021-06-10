@@ -145,14 +145,14 @@ function addUser() {
 	try {
 		xhr.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
-				document.getElementById("userAddResult").innerHTML = "User has been added";
+				// document.getElementById("userAddResult").innerHTML = "User has been added";
 				window.location.href = "login.html";
 			}
 		};
 		xhr.send(creds);
 	}
 	catch (err) {
-		document.getElementById("userAddResult").innerHTML = err.message;
+		// document.getElementById("userAddResult").innerHTML = err.message;
 	}
 
 }
@@ -173,7 +173,7 @@ function addContact() {
 	try {
 		xhr.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
-				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+				// document.getElementById("contactAddResult").innerHTML = "Contact has been added";
 				searchContact();
 			}
 		};
