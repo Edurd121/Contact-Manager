@@ -446,6 +446,8 @@ function displayContacts(contacts) {
 			</div>`
 		)
 	})
+
+	prepopulate(id);
 }
 
 
