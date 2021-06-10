@@ -370,9 +370,10 @@ function prepopulate(toEdit) {
 
 function displayContacts(contacts) {
 	console.log("inside displayContacts")
+	let id = ""
 	document.getElementById("contactsList").innerHTML = contacts.results.map((contact) => {
 		let temp = contact.split(", ");
-		let id = temp[0].split(": ")[1];
+		id = temp[0].split(": ")[1];
 		let name = temp[1].split(": ")[1];
 		let phone = temp[2].split(": ")[1];
 		let email = temp[3].split(": ")[1];
