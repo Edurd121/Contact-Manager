@@ -10,7 +10,6 @@ h1{
     font-size: 300%;
 }
 
-.scrollable{
-  overflow-y: auto;
-  max-height: 400px;
+#contactBody{
+  height: 400px;
 }
