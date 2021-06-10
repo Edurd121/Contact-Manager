@@ -354,10 +354,10 @@ function prepopulate(toEdit) {
 
 	console.log(toEdit + ", " + name + ", " + email + ", " + phone)
 	
-	document.getElementById("updateFirst" + toEdit).innerHTML = first
-	document.getElementById("updateLast" + toEdit).innerHTML = last
-	document.getElementById("updateEmail" + toEdit).innerHTML = email
-	document.getElementById("updatePhone" + toEdit).innerHTML = phone
+	document.getElementById("updateFirst" + toEdit).value = first
+	document.getElementById("updateLast" + toEdit).value = last
+	document.getElementById("updateEmail" + toEdit).value = email
+	document.getElementById("updatePhone" + toEdit).value = phone
 	
 	let uf = document.getElementById("updateFirst" + toEdit).innerHTML
 	let ul = document.getElementById("updateLast" + toEdit).innerHTML
