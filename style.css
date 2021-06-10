@@ -1,11 +1,11 @@
 body{
-    background-color: gray !important;
-    color: White !important;
+    background-color: #393e46 !important;
+    color: #eeeeee !important;
     text-align: center;
     overflow: auto;
 }
 
 h1{
-    color: White;
+    color: #eeeeee;
     font-size: 300%;
 }
