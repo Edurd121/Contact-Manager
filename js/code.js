@@ -340,10 +340,10 @@ function prepopulate(toEdit) {
 	last = temp[1];
 	
 
-	document.getElementById(toEdit + "updateFirst").innerHTML = first
-	document.getElementById(toEdit + "updateLast").innerHTML = last
-	document.getElementById(toEdit + "updateEmail").innerHTML = document.getElementById(toEdit + "email").innerHTML;
-	document.getElementById(toEdit + "updatePhone").innerHTML = document.getElementById(toEdit + "phone").innerHTML;
+	document.getElementById("updateFirst" + toEdit).innerHTML = first
+	document.getElementById("updateLast" + toEdit).innerHTML = last
+	document.getElementById("updateEmail" + toEdit).innerHTML = document.getElementById("email" + toEdit).innerHTML;
+	document.getElementById("updatePhone" + toEdit).innerHTML = document.getElementById("phone" + toEdit).innerHTML;
 }
 
 function displayContacts(contacts) {
@@ -358,59 +358,59 @@ function displayContacts(contacts) {
 			`
 			<div class="card row">
 				<div class="card">
-					<a class="btn btn-light" data-bs-toggle="collapse" href="#${id}info" role="button"
-						aria-expanded="false" aria-controls="${id}info" id="${id}name">${name}</a>
+					<a class="btn btn-light" data-bs-toggle="collapse" href="#info${id}" role="button"
+						aria-expanded="false" aria-controls="info${id}" id="name${id}">${name}</a>
 				</div>
 				<div>
 					<p>
 						<button class="btn btn-warning" type="button" data-bs-toggle="collapse"
-							data-bs-target="#${id}updateMenu" aria-expanded="false"
-							aria-controls="${id}updateMenu" onclick="prepopulate(${id})">Update</button>
+							data-bs-target="#updateMenu${id}" aria-expanded="false"
+							aria-controls="updateMenu${id}" onclick="prepopulate(${id})">Update</button>
 						<button class="btn btn-danger" type="button">Delete</button>
 					</p>
 				</div>
 				<div class="col">
 					<div class="col">
-						<div class="collapse multi-collapse" id="${id}info">
+						<div class="collapse multi-collapse" id="info${id}">
 							<div class="card card-body">
 								<ul class="list-group">
-									<li class="list-group-item" id="${id}phone">Phone: ${phone}</li>
-									<li class="list-group-item" id="${id}email">Email: ${email}</li>
+									<li class="list-group-item" id="phone${id}">Phone: ${phone}</li>
+									<li class="list-group-item" id="email${id}">Email: ${email}</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<div class="col">
-						<div class="collapse multi-collapse" id="${id}updateMenu">
+						<div class="collapse multi-collapse" id="updateMenu${id}">
 							<div class="card card-body">
 								<div class="card text-dark bg-light mb-6" style="max-width: 100%;">
 									<form class="col g-3" method="post" autocomplete="off">
 										<div class="mb-3 row">
-											<label for="${id}updateFirst" class="col-sm-2 col-form-label">First Name:</label>
+											<label for="updateFirst${id}" class="col-sm-2 col-form-label">First Name:</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="${id}updateFirst" name="FirstName">
+												<input type="text" class="form-control" id="updateFirst${id}" name="FirstName">
 											</div>
 
 										</div>
 
 										<div class="mb-3 row">
-											<label for="${id}updateLast" class="col-sm-2 col-form-label">Last Name:</label>
+											<label for="updateLast${id}" class="col-sm-2 col-form-label">Last Name:</label>
 											<div class="col-sm-4">
-												<input type="text" class="form-control" id="${id}updateLast" name="LastName">
+												<input type="text" class="form-control" id="updateLast${id}" name="LastName">
 											</div>
 										</div>
 
 										<div class="mb-3 row">
-											<label for="${id}updateEmail" class="col-sm-2 col-form-label">Email:</label>
+											<label for="updateEmail${id}" class="col-sm-2 col-form-label">Email:</label>
 											<div class="col-sm-4">
-												<input type="email" class="form-control" id="${id}updateEmail" name="Email">
+												<input type="email" class="form-control" id="updateEmail${id}" name="Email">
 											</div>
 										</div>
 
 										<div class="mb-3 row">
-											<label for="${id}updatePhone" class="col-sm-2 col-form-label">Phone:</label>
+											<label for="updatePhone${id}" class="col-sm-2 col-form-label">Phone:</label>
 											<div class="col-sm-4">
-												<input type="tel" class="form-control" id="${id}updatePhone" name="Phone">
+												<input type="tel" class="form-control" id="updatePhone${id}" name="Phone">
 											</div>
 										</div>
 										<button class="btn btn-outline-primary" onclick="updateContact(${id})">Update</button>
