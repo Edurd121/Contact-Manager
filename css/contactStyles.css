@@ -1,3 +1,27 @@
 #contactBody{
   max-height: 40rem;
 }
+
+#listContainer {
+  max-width: 35rem;
+   margin: auto;
+}
+
+#welcomeName {
+  margin: auto;
+}
+
+body{
+  background: linear-gradient(36deg, rgba(59,78,91,1) 11%, rgba(23,140,124,1) 23%, rgba(90,118,137,1) 47%, rgba(135,104,146,1) 98%);
+}
+
+#logoutButton {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  padding: 10px;
+}
+
+#mainTitle {
+  color: white;
+}
