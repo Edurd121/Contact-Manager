@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css\style.css">
+	<title>Login</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+		crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous">
+	</script>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="card bg-secondary border-info text-center text-white" id="listContainer" style="max-width: 35rem">
+		<div class="card-body">
+			<div class="card-header">
+				<h5 class="card-title">Login</h5>
+			</div>
+			<form class="col g-3">
+				<div class="mb-3 row">
+					<label for="inputUser" class="col-sm-4 col-form-label">User</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="loginName">
+					</div>
+				</div>
+	
+				<div class="mb-3 row">
+					<label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
+					<div class="col-sm-4">
+						<input type="password" class="form-control" id="loginPassword">
+					</div>
+	
+					<div class="row-auto">
+						<hr>
+						<button class="btn btn-outline-info my-2 my-sm-0" type="button" onclick="doLogin();">Login</button>
+					</div>
+				</div>
+				<span id="loginResult"></span>
+			</form>
+			<div class="row-auto">
+				<p>Don't have a login? <a href="register.html">Sign up</a>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
+
+<!-- <script>
+	var userId = 0;
+	var firstName = "";
+	var lastName = "";
+
+	function doLogin() {
+			var urlBase = 'http://cop4331-29.xyz/Contact-Manager';
+			var extension = 'php';
+
+			userId = 0;
+			firstName = "";
+			lastName = "";
+
+			var login = document.getElementById("loginName").value;
+			var password = document.getElementById("loginPassword").value;
+			//	var hash = md5( password );
+
+			document.getElementById("loginResult").innerHTML = "";
+
+			//	var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
+			var jsonPayload = '{"login" : "' + login + '", "password" : "' + password + '"}';
+			var url = urlBase + '/LAMPAPI/Login.' + extension;
+
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", url, true);
+			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			try {
+				xhr.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						var jsonObject = JSON.parse(xhr.responseText);
+						userId = jsonObject.id;
+
+						if (userId < 1) {
+							document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+							return;
+						}
+
+						firstName = jsonObject.firstName;
+						lastName = jsonObject.lastName;
+
+						saveCookie();
+
+						window.location.href = "login.html";
+
+					}
+				};
+				xhr.send(jsonPayload);
+			}
+			catch (err) {
+				document.getElementById("loginResult").innerHTML = err.message;
+			}
+
+		}
+
+		function saveCookie() {
+			var minutes = 20;
+			var date = new Date();
+			date.setTime(date.getTime() + (minutes * 60 * 1000));
+			document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+		}
+</script> -->
