@@ -134,7 +134,7 @@ function addUser() {
 	document.getElementById("userAddResult").innerHTML = "";
 	var hash = md5( password );
 	
-	var creds = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "login" : "' + username + '", "password" : "' + hash + '"}';
+	var creds = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "login" : "' + username + '", "password" : "' + password + '"}';
 	var url = urlBase + '/LAMPAPI/registerUser.' + extension;
 
 	console.log(creds);
