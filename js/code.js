@@ -358,20 +358,20 @@ function displayContacts(contacts) {
 			`
 			<div class="card row">
 				<div class="card">
-					<a class="btn btn-light" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
-						aria-expanded="false" aria-controls="multiCollapseExample1" id="${id}name">${name}</a>
+					<a class="btn btn-light" data-bs-toggle="collapse" href="#${id}info" role="button"
+						aria-expanded="false" aria-controls="${id}info" id="${id}name">${name}</a>
 				</div>
 				<div>
 					<p>
 						<button class="btn btn-warning" type="button" data-bs-toggle="collapse"
-							data-bs-target="#multiCollapseExample2" aria-expanded="false"
-							aria-controls="multiCollapseExample2" onclick="prepopulate(${id})">Update</button>
+							data-bs-target="#${id}updateMenu" aria-expanded="false"
+							aria-controls="${id}updateMenu" onclick="prepopulate(${id})">Update</button>
 						<button class="btn btn-danger" type="button">Delete</button>
 					</p>
 				</div>
 				<div class="col">
 					<div class="col">
-						<div class="collapse multi-collapse" id="multiCollapseExample1">
+						<div class="collapse multi-collapse" id="${id}info">
 							<div class="card card-body">
 								<ul class="list-group">
 									<li class="list-group-item" id="${id}phone">Phone: ${phone}</li>
@@ -381,7 +381,7 @@ function displayContacts(contacts) {
 						</div>
 					</div>
 					<div class="col">
-						<div class="collapse multi-collapse" id="multiCollapseExample2">
+						<div class="collapse multi-collapse" id="${id}updateMenu">
 							<div class="card card-body">
 								<div class="card text-dark bg-light mb-6" style="max-width: 100%;">
 									<form class="col g-3" method="post" autocomplete="off">
