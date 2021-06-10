@@ -300,10 +300,10 @@ function deleteContact(id) {
 function updateContact(id) {
 	console.log("Inside updateContact()")
 
-	let first = document.getElementById("contactFirst").value
-	let last = document.getElementById("contactLast").value
-	let phone = document.getElementById("contactPhone").value
-	let email = document.getElementById("contactEmail").value
+	let first = document.getElementById(id+"updateFirst").value
+	let last = document.getElementById(id+"updateLast").value
+	let phone = document.getElementById(id+"updatePhone").value
+	let email = document.getElementById(id+"updateEmail").value
 	document.getElementById("contactAddResult").innerHTML = "";
 
 	var jsonPayload = '{"id" : "' + id + '", "firstName" : "' + first + '", "lastName" : "' + last + '", "phone" : "' + phone + '", "email" : "' + email + '"}';
@@ -365,7 +365,7 @@ function displayContacts(contacts) {
 					<p>
 						<button class="btn btn-warning" type="button" data-bs-toggle="collapse"
 							data-bs-target="#multiCollapseExample2" aria-expanded="false"
-							aria-controls="multiCollapseExample2" onclick="update">Update</button>
+							aria-controls="multiCollapseExample2" onclick="prepopulate(${id})">Update</button>
 						<button class="btn btn-danger" type="button">Delete</button>
 					</p>
 				</div>
@@ -413,7 +413,7 @@ function displayContacts(contacts) {
 												<input type="tel" class="form-control" id="${id}updatePhone" name="Phone">
 											</div>
 										</div>
-										<button class="btn btn-outline-primary">Submit</button>
+										<button class="btn btn-outline-primary" onclick="updateContact(${id})">Update</button>
 									</form>
 								</div>
 							</div>
