@@ -51,8 +51,25 @@
 		</form>
 	</nav>
 	<span id="contactsSearchResult"></span>
-	<p id="contactList">
-	</p><br /><br />
+	<!-- <p id="contactList">
+	</p> -->
+	
+	<!-- Display contacts here -->
+	<div class="card text-center overflow-auto" style="max-width: 50rem">
+		<div class="card-header">
+			Contacts List
+		</div>
+		<div class="card-body">
+			<h5 class="card-title"></h5>
+				<div id="contactList"></div>
+			<a href="#" class="btn btn-primary">Go somewhere</a>
+		</div>
+		<div class="card-footer text-muted">
+			2 days ago
+		</div>
+	</div>
+
+	<br /><br />
 
 	<!-- Button trigger modal -->
 	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal" onclick="addCreateToggle(false, -1)">
