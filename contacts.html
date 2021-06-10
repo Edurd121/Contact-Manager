@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact Cornucopia</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+		crossorigin="anonymous">
+	<script src="jquery-3.5.1.min.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous">
+	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<p class="h1" id="mainTitle">Contact Cornucopia</p>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<button class="btn btn-outline-info" id="logoutButton" type="button" onclick="doLogout()">Logout </button>
+				</div>
+			</div>
+
+		</div>
+	</nav>
+
+	<nav class="navbar navbar-light bg-light">
+		<p id="welcomeName" class="h3"></p>
+		<!-- <form class="form-inline">
+			<input class="form-control mr-sm-2" id="searchText" type="search" placeholder="Search Contact" aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="searchContact()">Search</button>
+		</form> -->
+	</nav>
+	<span id="contactsSearchResult"></span>
+
+	<br></br>
+
+	
+	
+	<!-- Modal -->
+	<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Add Contact</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="card text-dark bg-light mb-6" style="max-width: 100%;">
+						<form class="col g-3" method="post" autocomplete="off">
+							<div class="form-control">
+								<div class="mb-3 row">
+									<label for="contactFirst" class="col-sm-4 col-form-label">First Name</label>
+									<div class="col-sm-6">
+										<input type="text" class="form-control" id="contactFirst" name="FirstName">
+									</div>
+							
+								</div>
+							
+								<div class="mb-3 row">
+									<label for="contactLast" class="col-sm-4 col-form-label">Last Name</label>
+									<div class="col-sm-6">
+										<input type="text" class="form-control" id="contactLast" name="LastName">
+									</div>
+								</div>
+							
+								<div class="mb-3 row">
+									<label for="contactEmail" class="col-sm-4 col-form-label">Email</label>
+									<div class="col-sm-6">
+										<input type="email" class="form-control" id="contactEmail" name="Email">
+									</div>
+								</div>
+							
+								<div class="mb-3 row">
+									<label for="contactPhone" class="col-sm-4 col-form-label">Phone</label>
+									<div class="col-sm-6">
+										<input type="tel" class="form-control" id="contactPhone" name="Phone">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"	data-bs-dismiss="modal">
+						Close
+					</button>
+					<button id="modalButton"type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addContact()">
+						Submit
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Display contacts here -->
+	<div class="card bg-secondary border-info text-center text-white" id="listContainer" style="max-width: 35rem">
+		<div class="card-header h4">
+			Contacts List
+		</div>
+		<div class="card-body overflow-auto" id="contactBody">
+			<!-- Button trigger modal -->
+			<div>
+				<form class="d-flex">
+					<input class="form-control me-2" id="searchText" type="search" placeholder="Search Contact"
+						aria-label="Search">
+					<button class="btn btn-outline-info my-2 my-sm-0" type="button"
+						onclick="searchContact()">Search</button>
+				</form>
+			</div>
+			<button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#createModal">
+				<span><i class="fas fa-user-plus"></i> New Contact</span>
+			</button>
+			<h5 class="card-title"></h5>
+				<div id="contactsList"></div>
+			<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+		</div>
+		<div class="card-footer text-muted" id="endOfList">
+			End of list
+		</div>
+	</div>
+
+	<br /><br />
+
+
+
+	<!-- So we can access ids after they have been rendered in the DOM -->
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			console.log("In event listener");
+			readCookie();
+		}, false);
+	</script>
+	<script type="text/javascript" src="js/code.js"></script>
+	<script type="text/javascript" src="js/md5.js"></script>
+
+	<script src="https://kit.fontawesome.com/48c6ba2c66.js" crossorigin="anonymous"></script></body>
+	<link href="css/contactStyles.css" rel="stylesheet">
+</html>
