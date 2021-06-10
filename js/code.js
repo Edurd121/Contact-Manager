@@ -371,7 +371,7 @@ function addUpdateToggle(mode, toEdit) {
 	}
 }
 
-function displayContacts(contact) {
+function displayContacts(contacts) {
 	console.log("inside displayContacts")
 	document.getElementById("contactsList").innerHTML = contacts.results.map((contact) => {
 		let temp = contact.split(", ");
