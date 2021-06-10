@@ -388,7 +388,7 @@ function displayContacts(contacts) {
 					<p>
 						<button class="btn btn-warning" type="button" data-bs-toggle="collapse"
 							data-bs-target="#updateMenu${id}" aria-expanded="false"
-							aria-controls="updateMenu${id}")">Update</button>
+							aria-controls="updateMenu${id}") onclick="prepopulate(${id})">Update</button>
 						<button class="btn btn-danger" type="button">Delete</button>
 					</p>
 				</div>
@@ -448,7 +448,6 @@ function displayContacts(contacts) {
 		)
 	})
 
-	prepopulate(id);
 }
 
 
