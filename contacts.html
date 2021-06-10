@@ -45,10 +45,10 @@
 
 	<nav class="navbar navbar-light bg-light">
 		<p id="welcomeName" class="h3"></p>
-		<form class="form-inline">
+		<!-- <form class="form-inline">
 			<input class="form-control mr-sm-2" id="searchText" type="search" placeholder="Search Contact" aria-label="Search">
 			<button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="searchContact()">Search</button>
-		</form>
+		</form> -->
 	</nav>
 	<span id="contactsSearchResult"></span>
 
@@ -116,11 +116,19 @@
 	
 	<!-- Display contacts here -->
 	<div class="card text-center overflow-auto" style="max-width: 30rem">
-		<div class="card-header">
+		<div class="card-header h4">
 			Contacts List
 		</div>
 		<div class="card-body">
 			<!-- Button trigger modal -->
+			<div>
+				<form class="d-flex">
+					<input class="form-control me-2" id="searchText" type="search" placeholder="Search Contact"
+						aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="button"
+						onclick="searchContact()">Search</button>
+				</form>
+			</div>
 			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
 				<span><i class="fas fa-user-plus"></i> New Contact</span>
 			</button>
