@@ -386,10 +386,10 @@ function displayContacts(contacts) {
 				</div>
 				<div>
 					<p>
-						<button class="btn btn-warning" type="button" data-bs-toggle="collapse"
+						<button class="btn btn-outline-warning" type="button" data-bs-toggle="collapse"
 							data-bs-target="#updateMenu${id}" aria-expanded="false"
 							aria-controls="updateMenu${id}") onclick="prepopulate(${id})"><span><i class="far fa-edit"></i></span></button>
-						<button class="btn btn-danger" type="button"><span><i class="fas fa-trash-alt"></i></span></button>
+						<button class="btn btn-outline-danger" type="button"><span><i class="fas fa-trash-alt"></i></span></button>
 					</p>
 				</div>
 				<div class="col">
@@ -407,36 +407,39 @@ function displayContacts(contacts) {
 						<div class="collapse multi-collapse" id="updateMenu${id}">
 							<div class="card card-body">
 								<div class="card text-dark bg-light mb-6" style="max-width: 100%;">
-									<form class="col g-3" method="post" autocomplete="off">
-										<div class="mb-3 row">
-											<label for="updateFirst${id}" class="col-sm-2 col-form-label">First Name:</label>
-											<div class="col-sm-4">
-												<input type="text" class="form-control" id="updateFirst${id}" name="FirstName">
+									<form class="col g-6" method="post" autocomplete="off">
+										<div class="form-control">
+										
+											<div class="mb-3 row">
+												<label for="updateFirst${id}" class="col-sm-2 col-form-label">First Name:</label>
+												<div class="col-sm-6">
+													<input type="text" class="form-control" id="updateFirst${id}" name="FirstName">
+												</div>
+
 											</div>
 
-										</div>
-
-										<div class="mb-3 row">
-											<label for="updateLast${id}" class="col-sm-2 col-form-label">Last Name:</label>
-											<div class="col-sm-4">
-												<input type="text" class="form-control" id="updateLast${id}" name="LastName">
+											<div class="mb-3 row">
+												<label for="updateLast${id}" class="col-sm-4 col-form-label">Last Name:</label>
+												<div class="col-sm-6">
+													<input type="text" class="form-control" id="updateLast${id}" name="LastName">
+												</div>
 											</div>
-										</div>
 
-										<div class="mb-3 row">
-											<label for="updateEmail${id}" class="col-sm-2 col-form-label">Email:</label>
-											<div class="col-sm-4">
-												<input type="email" class="form-control" id="updateEmail${id}" name="Email">
+											<div class="mb-3 row">
+												<label for="updateEmail${id}" class="col-sm-4 col-form-label">Email:</label>
+												<div class="col-sm-6">
+													<input type="email" class="form-control" id="updateEmail${id}" name="Email">
+												</div>
 											</div>
-										</div>
 
-										<div class="mb-3 row">
-											<label for="updatePhone${id}" class="col-sm-2 col-form-label">Phone:</label>
-											<div class="col-sm-4">
-												<input type="tel" class="form-control" id="updatePhone${id}" name="Phone">
+											<div class="mb-3 row">
+												<label for="updatePhone${id}" class="col-sm-4 col-form-label">Phone:</label>
+												<div class="col-sm-6">
+													<input type="tel" class="form-control" id="updatePhone${id}" name="Phone">
+												</div>
 											</div>
+											<button class="btn btn-outline-primary" onclick="updateContact(${id})">Update</button>
 										</div>
-										<button class="btn btn-outline-primary" onclick="updateContact(${id})">Update</button>
 									</form>
 								</div>
 							</div>
