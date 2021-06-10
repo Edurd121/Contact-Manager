@@ -331,7 +331,7 @@ function updateContact(id) {
 function prepopulate(toEdit) {
 	console.log(toEdit)
 
-	let name = document.getElementById(toEdit+"name").innerHTML
+	let name = document.getElementById("name"+toEdit).innerHTML
 	let first = ""
 	let last = ""
 	
