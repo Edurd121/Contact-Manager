@@ -147,6 +147,7 @@ function addUser() {
 			if (this.readyState == 4 && this.status == 200) {
 				document.getElementById("userAddResult").innerHTML = "User has been added";
 			}
+			window.location.href = "login.html";
 		};
 		xhr.send(creds);
 	}

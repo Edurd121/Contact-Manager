@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,71 +14,66 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 		crossorigin="anonymous">
-	</script>
-		<script type="text/javascript" src="js/code.js"></script>
+		</script>
+	<script type="text/javascript" src="js/code.js"></script>
 
 </head>
 
-	<body>
-		<div class="card border-dark mb-3" style="width: 50rem;">
-			<img src="..." class="card-img-top" alt="placeholder for future images">
-			<div class="card-body">
-				<div class="card-header">
-					<h5 class="card-title">Register</h5>
+<body>
+	<img src="..." class="card-img-top" alt="placeholder for future images">
+	<div class="card-body">
+		<div class="card-header">
+			<h5 class="card-title">Register</h5>
+		</div>
+		<form class="col g-3" method="post">
+			<div class="mb-3 row">
+				<label for="inputFirstName" class="col-sm-4 col-form-label">First Name</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="inputFirst" name="FirstName">
 				</div>
-				<!-- <form action="registerUser.php" class="col g-3" method = "POST"> -->
-				<form class="col g-3">
-					<div class="mb-3 row">
-						<label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
-						<div class="col-sm-4">
-							<input type="text" class="form-control" id="inputFirst" name = "FirstName">
-						</div>
 
 
-					</div>
-	
-	
-				</div>
 			</div>
-	
+
 			<div class="mb-3 row">
 				<label for="inputLastName" class="col-sm-4 col-form-label">Last Name</label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="inputLast"   name = "LastName">
+					<input type="text" class="form-control" id="inputLast" name="LastName">
 				</div>
 			</div>
-	
+
 			<div class="mb-3 row">
 				<label for="inputUser" class="col-sm-4 col-form-label">User</label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="inputUser"  name = "Login" >
+					<input type="text" class="form-control" id="inputUser" name="Login">
 				</div>
 			</div>
-					
+
 			<div class="mb-3 row">
 				<label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
 				<div class="col-sm-4">
-					<input type="password" class="form-control" id="inputPassword" name = "Password">
+					<input type="password" class="form-control" id="inputPassword" name="Password">
 				</div>
-	
+
 				<div class="row-auto">
-					<button type="submit" class="btn btn-warning" name = "sign_user" onclick="addUser();">Sign Up</button>
+					<button type="submit" class="btn btn-warning" name="sign_user"
+						onclick="addUser();">Sign Up</button>
 				</div>
-	
+
 				<p>Got an account? <a href="login.html">Log in here</a>
 			</div>
-			</form>
-			<span id="userAddResult"></span>
-		</div>
-	
-	</body>
+		</form>
+		<span id="userAddResult"></span>
+	</div>
+
+	</div>
+</body>
 
 
-	
 
 </html>
 
-	<!-- <script type="text/javascript">
+<!-- <script type="text/javascript">
 		function test() {
 			console.log("We are in test!");
 			var first = document.getElementById("inputFirst").value
