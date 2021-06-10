@@ -411,7 +411,7 @@ function displayContacts(contacts) {
 										<div class="form-control">
 										
 											<div class="mb-3 row">
-												<label for="updateFirst${id}" class="col-sm-2 col-form-label">First Name:</label>
+												<label for="updateFirst${id}" class="col-sm-4 col-form-label">First Name:</label>
 												<div class="col-sm-6">
 													<input type="text" class="form-control" id="updateFirst${id}" name="FirstName">
 												</div>
