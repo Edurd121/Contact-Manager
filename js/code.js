@@ -309,8 +309,6 @@ function updateContact(id) {
 	var jsonPayload = '{"id" : "' + id + '", "firstName" : "' + first + '", "lastName" : "' + last + '", "phone" : "' + phone + '", "email" : "' + email + '"}';
 	var url = urlBase + '/LAMPAPI/UpdateContact.' + extension;
 
-	// Switch the modal back to add mode
-	addUpdateToggle(false)
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -329,46 +327,23 @@ function updateContact(id) {
 
 }
 
-function addUpdateToggle(mode, toEdit) {
-	console.log(mode)
+// Prepopulates form fields
+function prepopulate(toEdit) {
 	console.log(toEdit)
-	// If we want to update
-	if (mode)
-	{
-		// Prepopulates the modal with the data we currently have
-		let name = document.getElementById(toEdit+"name").innerHTML
-		let first = ""
-		let last = ""
-		if (name.includes(" "))
-		{
-			let temp = name.split(" ");
-			first = temp[0];
-			last = temp[1];
-		}
-		else
-		{
-			first = name;
-			last = "";
-		}
 
-		document.getElementById("contactFirst").innerHTML = first
-		document.getElementById("contactLast").innerHTML = last
-		document.getElementById("contactEmail").innerHTML = document.getElementById(toEdit + "phone").innerHTML;
-		document.getElementById("contactPhone").innerHTML = document.getElementById(toEdit + "email").innerHTML;
-		document.getElementById("modalButton").onclick = () => {updateContact(toEdit);}
-		console.log("Switched to update mode")
-	}
-	// If we want to add
-	else
-	{
-		// Prepopulates modal with empty data
-		document.getElementById("contactFirst").inernerHTML = ""
-		document.getElementById("contactLast").innerHTML = ""
-		document.getElementById("contactEmail").innerHTML = ""
-		document.getElementById("contactPhone").innerHTML = ""
-		document.getElementById("modalButton").onclick = addContact;
-		console.log("Switched to add mode")
-	}
+	let name = document.getElementById(toEdit+"name").innerHTML
+	let first = ""
+	let last = ""
+	
+	let temp = name.split("");
+	first = temp[0];
+	last = temp[1];
+	
+
+	document.getElementById(toEdit + "updateFirst").innerHTML = first
+	document.getElementById(toEdit + "updateLast").innerHTML = last
+	document.getElementById(toEdit + "updateEmail").innerHTML = document.getElementById(toEdit + "email").innerHTML;
+	document.getElementById(toEdit + "updatePhone").innerHTML = document.getElementById(toEdit + "phone").innerHTML;
 }
 
 function displayContacts(contacts) {
@@ -390,7 +365,7 @@ function displayContacts(contacts) {
 					<p>
 						<button class="btn btn-warning" type="button" data-bs-toggle="collapse"
 							data-bs-target="#multiCollapseExample2" aria-expanded="false"
-							aria-controls="multiCollapseExample2">Update</button>
+							aria-controls="multiCollapseExample2" onclick="update">Update</button>
 						<button class="btn btn-danger" type="button">Delete</button>
 					</p>
 				</div>
@@ -398,8 +373,10 @@ function displayContacts(contacts) {
 					<div class="col">
 						<div class="collapse multi-collapse" id="multiCollapseExample1">
 							<div class="card card-body">
-								Phone: ${phone}
-								Email: ${email}
+								<ul class="list-group">
+									<li class="list-group-item" id="${id}phone">Phone: ${phone}</li>
+									<li class="list-group-item" id="${id}email">Email: ${email}</li>
+								</ul>
 							</div>
 						</div>
 					</div>
