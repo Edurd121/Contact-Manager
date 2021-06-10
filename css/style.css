@@ -8,13 +8,14 @@ body{
 
 #listContainer {
     max-width: 35rem;
-     margin: auto;
-    margin-top: 300px;
+    margin: auto;
+    margin-top: 8%;
   }
 
 h1{
     color: #eeeeee;
     font-size: 300%;
-    margin-top: 300px;
+    margin-top: 8%;
 }
+
 
